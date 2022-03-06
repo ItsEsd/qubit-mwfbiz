@@ -178,7 +178,7 @@ function postTOD() {
   if (valHTM != 0) {
     var postedTOD = JSON.stringify(document.getElementById("inHtml").value);
     var posts = JSON.parse(postedTOD);
-    document.getElementById("genId").value = Math.random().toString(26).substring(2, 5) + Math.random().toString(26).substring(2, 5);
+    document.getElementById("genId").value = Math.random().toString(26).substring(2, 6) + Math.random().toString(26).substring(2, 6);
   } else {
     document.getElementById('p1').style.display = "none";
     document.getElementById('prepost').style.display = "block";
@@ -274,7 +274,7 @@ postTODT.addEventListener('submit', (event) => {
   var recip1 = jQuery("#basehtm").val();
   if (creator1 != 0 && food1 != 0 && itemno1 != 0 && recip1 != 0) {
     var url = urbit_ + "?callback=ctrlqinst&genId=" + itemno + "&creatorN=" + creator + "&basehtm=" + recip + "&genK=" + food + "&dateQ=" + currentTime + "&action=insertbit";
-    //console.log(url);
+  
     var request = jQuery.ajax({
       crossDomain: true,
       url: url,
@@ -319,11 +319,10 @@ document.getElementById("preTOD").addEventListener("click", readgenTOD);
 
 function readgenTOD() {
   jQuery("#preview").hide();
-
   var itemnoT = jQuery("#preId").val();
   var foodF = jQuery("#preK").val();
-  var itemno = JSON.stringify(jQuery("#preId").val());
-  var food = JSON.stringify(jQuery("#preK").val());
+  var itemno = escape(JSON.stringify(jQuery("#preId").val()));
+  var food = escape(JSON.stringify(jQuery("#preK").val()));
   if (itemnoT != "" && foodF != "") {
     document.getElementById("loader_e").style.display = "block";
     document.getElementById('notfound').style.display = "none";
@@ -351,6 +350,7 @@ function ctrlqrdbit(e){
   var Tim = res[0].TimeStamp;
   var Crby = res[0].Creator;
   if(res != "ID not found!"){
+    jQuery("#imgcon").hide();jQuery("#bizprost").hide();
     document.getElementById('editor').style.display = "none";
     document.getElementById('notfound').style.display = "none";
     document.getElementById("preview").style.display = "block";
@@ -439,7 +439,7 @@ jQuery("#openMI").click(function() {
 stqubitfrm.addEventListener('submit', (event) => {
   var jsonbit = jQuery("#jsonbit").val();
   var bitid = JSON.stringify(jQuery("#bitid").val());
-  var bitpass = JSON.stringify(jQuery("#bitpass").val());
+  var bitpass = escape(JSON.stringify(jQuery("#bitpass").val()));
   if (bitid != 0 && bitpass != 0) {
     document.getElementById("loader_e").style.display = "block";
     var ur1="https://script.google.com/macros/s/";
@@ -502,11 +502,11 @@ function userfound(e){
   if(res != "ID not found!"){
   var mailcheckQ = escape(jQuery("#mailcheck").val());
   var passcheckQ = escape(jQuery("#passcheck").val());
-  var bitidD =  JSON.stringify(jQuery("#bitid").val());
-  var bitpassD =  JSON.stringify(jQuery("#bitpass").val());
+  var bitidD =  escape(JSON.stringify(jQuery("#bitid").val()));
+  var bitpassD =  escape(JSON.stringify(jQuery("#bitpass").val()));
     var urlbit1 = "https://script.google.com/macros/s/";
     var urlbit2 ="AKfycbxp5KXDO0gtJOG_QoiKhYo63kzs2FUItXTgP8TUWEFr0IQKHiVyi5qSlPM4Ngv-LEvC";
-    var urlbit = urlbit1+urlbit2+"/exec" + "?callback=ctrlq&passcheck=" + passcheckQ +  "&mailcheck=" + mailcheckQ +"&bitid=" + bitidD + "&bitpass=" + bitpassD +"&action=sttd";
+    var urlbit = urlbit1+urlbit2+"/exec" + "?callback=ctrlqbitstr&passcheck=" + passcheckQ +  "&mailcheck=" + mailcheckQ +"&bitid=" + bitidD + "&bitpass=" + bitpassD +"&action=sttd";
     var request = jQuery.ajax({
       crossDomain: true,
       url: urlbit,
@@ -526,7 +526,13 @@ function userfound(e){
     document.getElementById("loader_e").style.display = "none";
   }
 }
-
+function ctrlqbitstr(){
+  $('#storedbitspre').empty();
+  stqubitfrm.reset(); stbitlogin.reset();userCookie();
+  setTimeout(function(){
+    document.getElementById("check").style.display = "none";
+  },2000);
+}
 bitlogin.addEventListener('submit', (event) => {
   var mailcheckQ = escape(jQuery("#mailcheckB").val());
   var passcheckQ = escape(jQuery("#passcheckB").val());
@@ -567,6 +573,8 @@ function userallbit(e){
     "<input class='qbidst' value='"+k2[i]+"'><input class='keyidst' value='"+k2[i+1]+"'></div>";
     i=i+1;
  }
+ $('#closegubitst').show();
+ $('#addqubit').hide();
   }
   else{
     document.getElementById("storedbits").innerHTML = "";
