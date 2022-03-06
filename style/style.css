@@ -484,17 +484,18 @@ color:black;
   }
 
   #storedbitspre{
-    top: 228px;
+    bottom: 54px;
     right:0px;
     position: absolute;
     height:100%;
-    max-height:57%;
+    max-height:360px;
     max-width: 300px;
     width:100%;
     overflow-y: scroll;
     color:black;
     background-color: #b11111a1;
     display:none;
+    border-top-left-radius: 6px;
   }
   .prestqbit{
     border-bottom:1px solid grey;
