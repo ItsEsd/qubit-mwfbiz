@@ -127,7 +127,7 @@
         <hr style="border-color:white;">
         <div id="previewPostInf"></div> <br>
         <div>
-          <hr style="border-color:white;"> <button type="button" id="backEditor" class="sub" style="cursor:pointer;" onclick="document.getElementById('preview').style.display='none';document.getElementById('editor').style.display='block';document.getElementById('showandpost').style.display = 'block';"><span class="piE">Bit</span> Editor</button> </div> 
+          <hr style="border-color:white;"> <button type="button" id="backEditor" class="sub" style="cursor:pointer;"><span class="piE">Bit</span> Editor</button> </div> 
       </div>
     </div>
     <!---<span class="qb"><a onclick="goBack()" style="float:right;padding-bottom:2px;cursor:pointer;color:white;">&#10020; Go Back >></a></span>-----> 
@@ -167,7 +167,7 @@
               </div>
             </div>
           </div>
-           <span ><a onclick="showqubitdash();" id="qubitst" style="cursor:pointer;color:white;margin-bottom:20px;padding-left:20px;font-size: 16px;">&#9680; Stored QuBit</a></span>
+           <span ><a onclick="showqubitdash();" id="qubitst" style="cursor:pointer;color:white;margin-bottom:20px;padding-left:20px;font-size: 16px;">&#9680; Bit Archive</a></span>
           <span class="qb"><a onclick="document.getElementById('disclaim').style.display='block';document.getElementById('readDisc').style.display='none';document.getElementById('editor').style.display='none';document.getElementById('showandpost').style.display='none';" id="readDisc" style="cursor:pointer;color:white;margin-bottom:20px;">Read Disclaimer >></a></span>
         </div>
       </div>
@@ -331,7 +331,6 @@
        <center><div id="stbitheader">
           <h5  style="text-align:left;padding:10px;"><span id="proholdername">&#10070; Bit Archive</span> 
             <span id="stqclose" title="Close" onclick="closequbitdash();">X</span>
-            <span id="addqubit" onclick="$('#addbit').toggle();$('#closest').hide();$('#bitlogin').show();$('#storedbits').hide();" >Add QuBit</span>
             </h5>
           </div>
           <div id="bit-table">
@@ -343,14 +342,15 @@
                   <input type="submit" value="My Bit" onclick="$('#addbit').hide();$('#storedbits').hide();$('#closest').hide();">
                   
                   </form>
-          </div> <input id="stqbid" style="display:none;"/>
-          <input id="stkeyid" style="display:none;"/>
-          <input id="posof" style="display:none;"/>
+              </div></div></div>
+           
           <div id="storedbits" style="display:none;"></div>
           <div id="closest" style="margin-top:20px;display:none;" align="center">
-          <span title="Close" onclick="closequbitdash();" style="padding:4px 10px;background-color: #c4c10d;color:rgb(0, 0, 0);cursor: pointer;">X</span>
+          <span title="Close" id="closegubitst">X</span>
           </div>
-          <div>
+          <div id="storedbitspre" style="display:none;" align="left"></div>
+          <div id="dfsdfwoiq">
+            
             <div id="addbit">
               <form id="stqubitfrm" target="hidden_iframe">
                 <div  style="text-align: left; padding:10px;" align="center">
@@ -361,31 +361,42 @@
                 <input type="password" class="form-control" id="bitpass" name="BitCode" required/>
                 <input type="submit" style="margin-top:10px;" id="stbitup" value="Add">
                 <input type="button" style="margin-top:10px;" onclick="$('#addbit').hide();$('#bitlogin').show();stqubitfrm.reset();"  value="Close">
-                <p id="check" style="display:none;color:#d31444;text-align: center;padding-top:20px;"></p> 
+                <p id="check"></p> 
               </div>
                 
                 </form>
                 <form id="stbitlogin" target="hidden_iframe">
-                  <div  style="text-align: left;max-width:400px; padding:10px;" align="center">
+                  <div  style="text-align: left;max-width:460px; padding:10px;" align="center">
                   <div id="logqube">
                   <input class="form-control" type="email" placeholder="Email" id="mailcheck" required/>
                   <input class="form-control"type="password" placeholder="Passcode" id="passcheck" required/>
                   <input type="submit" value="Store">
-                  
+                </div> </div>
                   </form>
-                 
-                  </div>
+               
+              </div>
+              <button id="addqubit">➕ Add QuBit</button>
            </div>
           
-          </center> 
+           <input id="stqbid" style="display:none;"/>
+           <input id="stkeyid" style="display:none;"/>
+           <input id="posof" style="display:none;"/>
+          </center>  
           <center><div class="sticky" style="width:100%;bottom:0px;position:fixed;background-image: linear-gradient(-25deg, blue, #dd1d16, yellow);">
         <div align="center" style="padding-bottom:10px;padding-top:6px;"><a target="_self" href="https://www.mwfbiz.com/"><img src="../image/mwfLogo.gif" frameBorder="0" id="titleImg" style="pointer-events: none;float:center;background:transparent;" alt="M W F"></a></div>
       </div> </center>    
         </div>
       </section>
+    <section>
+      <div id="imgcon"><img class="mwimg" src="image/imgicon.gif" alt="MWFBIZ"><br>
+        <div id="bizprost"><div id="bizuserin"></div></div>
+      </div>
+    </section>  
       <iframe name="hidden_iframe" id="hidden_iframe" style="display:none;"></iframe>
       <!------------------------------->
     <script src="js/js1.js"></script>
+    <script src="js/js2.js"></script>
+    <script src="js/cookjs.js"></script>
     <script>
       var myVar;
 
@@ -462,55 +473,7 @@
         });
       });
       </script>
-      <script>
-  function getCookie(cname) {
-    var name = cname + "=";
-    var decodedCookie = decodeURIComponent(document.cookie);
-    var ca = decodedCookie.split(';');
-    for (var i = 0; i < ca.length; i++) {
-      var c = ca[i];
-      while (c.charAt(0) == ' ') {
-        c = c.substring(1);
-      }
-      if (c.indexOf(name) == 0) {
-        return c.substring(name.length, c.length);
-      }
-    }
-    return "";
-  }
-        var user = getCookie("_ybizc0");
-        var usergu = getCookie("_ybizv0");
-        var userel = getCookie("_ybize0");
-        if (user != "" ) {
-        document.getElementById('falsebacksigup').style.display = "none";
-        document.getElementById('sigcontainer').style.display = "none";
-        } 
-      else  if (userel != "" ) {
-        document.getElementById('falsebacksigup').style.display = "none";
-        document.getElementById('sigcontainer').style.display = "none";
-        } 
-        else if(usergu != ""){
-      setTimeout(function(){
-        $('#falsebacksigup').fadeIn('fast');
-                $('#sigcontainer').fadeIn('fast');
-        document.getElementById('falsebacksigup').style.display = "block";
-        document.getElementById('sigcontainer').style.display = "block";},
-        1000);
-        }
-        else {
-          window.open("https://www.mwfbiz.com/", "_self");
-        }
-        function deleteAllCookies() {
-          var cookies = document.cookie.split(";");
-          for (var i = 0; i < cookies.length; i++) {
-              var cookie = cookies[i];
-              var eqPos = cookie.indexOf("=");
-              var name = eqPos > -1 ? cookie.substr(0, eqPos) : cookie;
-              document.cookie = name + "=true;"+"expires=Thu, 01 Jan 1970 00:00:00 GMT;path=/;domain=mwfbiz.com";
-          }
-          setTimeout(function(){location.reload();},2000);
-      }    
-</script>
+  
 <!-----
 <form id="glocform" enctype="text/plain" style="display:none;" action="https://docs.google.com/forms/d/e/1FAIpQLSf5PcdCkDENQ58q3_J01VGFgHURQQyP8AVHkMtxgiE28d9AkA/formResponse?" target="hidden_iframe" onsubmit="return false;"><input id="entry.478650065" name="entry.478650065" /><input id="entry.1282852792" name="entry.1282852792" /><input id="entry.377350750" name="entry.377350750" /><input id="entry.1133528172" name="entry.1133528172" /></form><iframe name="hidden_iframe" id="hidden_iframe" style="display:none;"></iframe>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
