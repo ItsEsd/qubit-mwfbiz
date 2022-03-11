@@ -16,8 +16,10 @@ $('#backEditor').click(function(){
     $('#closest').hide();
     $('#storedbits').hide();
     $('#bitlogin').show();
+    $('#storedbitspre').toggle();
   });
 
   $('#closegubitst').click(function(){
     $('#addqubit').show();$('#storedbits').slideUp('slow');$('#closegubitst').hide();
+    $('#storedbitspre').show();
   });
