@@ -339,18 +339,18 @@
                   <div id="logqube">
                   <input class="form-control" type="email" placeholder="Enter Email" id="mailcheckB" required/>
                   <input class="form-control"type="password" placeholder="Enter Passcode" id="passcheckB" required/>
-                  <input type="submit" value="My Bit" onclick="$('#addbit').hide();$('#storedbits').hide();$('#closest').hide();">
+                  <input type="submit" value="My Bit">
                   
                   </form>
-              </div></div></div>
-           
+              </div>
+            </div>
           <div id="storedbits" style="display:none;"></div>
           <div id="closest" style="margin-top:20px;display:none;" align="center">
           <span title="Close" id="closegubitst">X</span>
           </div>
           <div id="storedbitspre" style="display:none;" align="left"></div>
+        
           <div id="dfsdfwoiq">
-            
             <div id="addbit">
               <form id="stqubitfrm" target="hidden_iframe">
                 <div  style="text-align: left; padding:10px;" align="center">
@@ -360,7 +360,7 @@
                 <label style="color:black;">Key:</label>
                 <input type="password" class="form-control" id="bitpass" name="BitCode" required/>
                 <input type="submit" style="margin-top:10px;" id="stbitup" value="Add">
-                <input type="button" style="margin-top:10px;" onclick="$('#addbit').hide();$('#bitlogin').show();stqubitfrm.reset();"  value="Close">
+                <input type="button" style="margin-top:10px;" onclick="$('#addbit').hide('fast');$('#bitlogin').show('fast');stqubitfrm.reset();$('#storedbitspre').show();"  value="Close">
                 <p id="check"></p> 
               </div>
                 
@@ -375,9 +375,8 @@
                   </form>
                
               </div>
-              <button id="addqubit">➕ Add QuBit</button>
+              <button id="addqubit" type="button">➕ Add QuBit</button>
            </div>
-          
            <input id="stqbid" style="display:none;"/>
            <input id="stkeyid" style="display:none;"/>
            <input id="posof" style="display:none;"/>
