@@ -534,6 +534,7 @@ function ctrlqbitstr(){
   },2000);
 }
 bitlogin.addEventListener('submit', (event) => {
+ $('#addbit').hide();$('#storedbits').hide();$('#closest').hide();
   var mailcheckQ = escape(jQuery("#mailcheckB").val());
   var passcheckQ = escape(jQuery("#passcheckB").val());
   
@@ -559,6 +560,8 @@ bitlogin.addEventListener('submit', (event) => {
 function userallbit(e){
   var res = e.records;
   if(res !="ID not found!"){
+ $('#addqubit').hide(); 
+ $('#storedbitspre').hide();
     document.getElementById("closest").style.display = "block";
     document.getElementById("proholdername").innerHTML = res[0].FirstName +" "+res[0].LastName;
  var k = JSON.parse(JSON.stringify(res[0].QBstored));
@@ -574,7 +577,6 @@ function userallbit(e){
     i=i+1;
  }
  $('#closegubitst').show();
- $('#addqubit').hide();
   }
   else{
     document.getElementById("storedbits").innerHTML = "";
