@@ -527,10 +527,10 @@ function userfound(e){
   }
 }
 function ctrlqbitstr(){
-  $('#storedbitspre').empty();
+  $('#storedbitspre').empty();$('#addbit').hide();
   stqubitfrm.reset(); stbitlogin.reset();userCookie();
   setTimeout(function(){
-    document.getElementById("check").style.display = "none";
+    document.getElementById("check").innerHTML = "";
   },2000);
 }
 bitlogin.addEventListener('submit', (event) => {
