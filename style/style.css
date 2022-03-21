@@ -521,9 +521,17 @@ color:black;
   }
   .stqubitshow:focus,.stqubitshow:active,.stqubitshow:hover{
     outline:none;
+    cursor: auto;
   -webkit-transform: scale(1.04);
   transform: scale(1.04);
   background-color: #1d1d1bd2;
+  }
+  .stqubitshow p:hover{
+background-color: #d7d7d8;
+padding-left:4px;
+padding-right:4px;
+border-radius: 5px;
+cursor: pointer;
   }
   #closegubitst{
     padding:4px 10px;
@@ -618,3 +626,33 @@ transform: scale(1.06);
     font-family: 'Courier New', Courier, monospace;
     font-size:16px;
   }
+.sharebiton{
+  float:right;
+  background-color: #c5c5c9;
+  border-radius: 50px;
+  cursor: pointer;
+}
+.sharebiton svg{
+  width:40px;
+  height:40px;
+  padding:10px;
+}
+.sharebiton:hover{
+background-color:#181717;
+color:white;
+}
+
+#lkcopied{
+  bottom:60px;
+  position: fixed;
+  width:100%;
+  z-index:10000;
+  display: none;
+}
+#lkcopied div{
+  max-width:240px;
+  font-size: 18px;
+  padding:10px;
+  background-color: #5a5a5a;
+  border-radius: 10px;
+}
