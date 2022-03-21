@@ -23,3 +23,19 @@ $('#backEditor').click(function(){
     $('#addqubit').show();$('#storedbits').slideUp('slow');$('#closegubitst').hide();
     $('#storedbitspre').show();
   });
+ 
+
+  //////////////////////////////// URL FETCH //////////////////////////////////
+
+var url_string = window.location.href;
+var url = new URL(url_string);
+var q = window.atob(url.searchParams.get("qbid"));
+var k = window.atob(url.searchParams.get("bizk"));
+var r = url.searchParams.get("no");
+if(r =="yes"){
+  document.getElementById('preId').value= q;
+  document.getElementById('preK').value= k;
+  $('#backEditor').hide();$('.qbitbody').hide();
+  readgenTOD();
+}
+
