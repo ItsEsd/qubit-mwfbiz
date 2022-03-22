@@ -25,8 +25,6 @@ $('#backEditor').click(function(){
   });
  
 
-  ////////////////// URL FETCH ///////////////////
-
 var url_string = window.location.href;
 var url = new URL(url_string);
 var q = window.atob(url.searchParams.get("qbid"));
