@@ -460,7 +460,7 @@ position: relative;
   background-color: black;
   top:0;left:0;
   position: fixed;
-  opacity:0.6;
+  opacity:0.8;
 }
 #loader_e img{left:46%;top:40%;
   position: absolute;
@@ -655,4 +655,14 @@ color:white;
   padding:10px;
   background-color: #5a5a5a;
   border-radius: 10px;
+}
+
+#falqbody{
+  margin-top:240px;
+  font-size:80px;
+  color:#ffffff38;
+  display:none;
+}
+#qbitbody{
+  display: none;
 }
