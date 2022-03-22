@@ -460,7 +460,7 @@ position: relative;
   background-color: black;
   top:0;left:0;
   position: fixed;
-  opacity:0.8;
+  opacity:0.6;
 }
 #loader_e img{left:46%;top:40%;
   position: absolute;
