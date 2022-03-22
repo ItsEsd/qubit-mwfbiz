@@ -351,6 +351,7 @@ function ctrlqrdbit(e){
   var Crby = res[0].Creator;
   if(res != "ID not found!"){
     jQuery("#imgcon").hide();jQuery("#bizprost").hide();
+    $('#falqbody').hide();
     document.getElementById('editor').style.display = "none";
     document.getElementById('notfound').style.display = "none";
     document.getElementById("preview").style.display = "block";
