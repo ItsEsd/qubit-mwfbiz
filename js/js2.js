@@ -25,7 +25,7 @@ $('#backEditor').click(function(){
   });
  
 
-  //////////////////////////////// URL FETCH //////////////////////////////////
+  ////////////////// URL FETCH ///////////////////
 
 var url_string = window.location.href;
 var url = new URL(url_string);
@@ -35,7 +35,11 @@ var r = url.searchParams.get("no");
 if(r =="yes"){
   document.getElementById('preId').value= q;
   document.getElementById('preK').value= k;
-  $('#backEditor').hide();$('.qbitbody').hide();
+  $('#backEditor,#qbitbody').hide();
+  $('#falqbody').show();
   readgenTOD();
+}
+else{
+  $('#qbitbody').show();
 }
 
