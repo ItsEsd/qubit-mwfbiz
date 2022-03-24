@@ -29,6 +29,7 @@ function getCookie(cname) {
         } 
         else if(usergu != ""){
           document.getElementById("imgcon").style.pointerEvents = "none";
+          userCookie();
           setTimeout(function(){
                 $('#falsebacksigup').fadeIn('fast');
                 $('#sigcontainer').fadeIn('fast');},600000);
