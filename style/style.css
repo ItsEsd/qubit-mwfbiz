@@ -493,7 +493,7 @@ color:black;
     overflow-y: hidden;
     overflow-x: scroll;
     color:black;
-    background-color: #b11111a1;
+    background-color: transparent;
     display:none;
     white-space: nowrap;
     vertical-align: text-top;
