@@ -23,14 +23,12 @@ function getCookie(cname) {
         } 
       else  if (userel != "" ) {
         document.getElementById("imgcon").style.pointerEvents = "none";
-        userCookie();
         setTimeout(function(){
           $('#falsebacksigup').fadeIn('fast');
           $('#sigcontainer').fadeIn('fast');},1800000);
         } 
         else if(usergu != ""){
           document.getElementById("imgcon").style.pointerEvents = "none";
-          userCookie();
           setTimeout(function(){
                 $('#falsebacksigup').fadeIn('fast');
                 $('#sigcontainer').fadeIn('fast');},600000);
