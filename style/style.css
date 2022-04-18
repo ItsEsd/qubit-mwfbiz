@@ -227,6 +227,7 @@
 
     #previewPost {
       overflow-x: auto;
+      text-align: left;
     }
 
     .piE {
