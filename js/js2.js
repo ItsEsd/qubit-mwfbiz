@@ -20,7 +20,9 @@ $('#backEditor').click(function(){
   });
 
   $('#closegubitst').click(function(){
-    $('#addqubit').show();$('#storedbits').slideUp('slow');$('#closegubitst').hide();
+    $('#addqubit').show();$('#storedbits').slideUp('slow');
+    $('#storedbits').empty();
+    $('#closegubitst').hide();
     $('#storedbitspre').show();
   });
  
