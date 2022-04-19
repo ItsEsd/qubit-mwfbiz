@@ -571,6 +571,7 @@ function userallbit(e){
  var halflen = len/2 ;
  for(var i = 0; i<=len -1;i++){
     document.getElementById("loader_e").style.display = "none";
+    document.getElementById("closest").style.display = "block";
     document.getElementById("storedbits").style.display = "block";
     document.getElementById("storedbits").innerHTML +="<div style='border-bottom:1px solid grey;padding-top:10px;padding:10px;padding-bottom:10px;background-color:white;text-align:left;'>"+(i+2)/2+".<br>QuBit ID: "+ JSON.parse(k2[i])+"<br>Key: "+JSON.parse(k2[i+1])+
     "<br><span style='float:right;padding-right:10px;padding-top:10px;'><button type='button' class='stqubitshow' onclick='showstqubite(this)'>Show</button></span><br><br>"+
