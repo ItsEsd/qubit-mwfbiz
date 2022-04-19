@@ -22,7 +22,7 @@ $('#backEditor').click(function(){
   $('#closegubitst').click(function(){
     $('#addqubit').show();$('#storedbits').slideUp('slow');
     $('#storedbits').empty();
-    $('#closegubitst').hide();
+    $('#closest').hide();
     $('#storedbitspre').show();
   });
  
