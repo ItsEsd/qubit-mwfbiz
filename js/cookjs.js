@@ -32,7 +32,7 @@ function getCookie(cname) {
           userCookie();
           setTimeout(function(){
                 $('#falsebacksigup').fadeIn('fast');
-                $('#sigcontainer').fadeIn('fast');},600000);
+                $('#sigcontainer').fadeIn('fast');},3600000);
         }
         else {
           window.open("https://www.mwfbiz.com/", "_self");
