@@ -259,7 +259,7 @@ function dateUp() {
 
 postTODT.addEventListener('submit', (event) => {
   var ur1= "https://script.google.com/macros/s/";
-  var ur2 = "AKfycbzIQ91nPrcKwZjGdU7lcaXK-_Gooyv3La4mBTZd1BSPlIfy-JcPIXXaa9qj_V_Im4kl";
+  var ur2 = "AKfycbzPe_DiGzy_xlIv0R_YoYB7u4SlG0cX6RXTKybbGbvgWbqKyhHF4P69Sf74eQENPN6e";
   var urbit_ = ur1+ur2+"/exec";
     document.getElementById("poTOD").disabled = true;
   document.getElementById("loader-qb").style.display = "block";
@@ -272,8 +272,9 @@ postTODT.addEventListener('submit', (event) => {
   var food1 = jQuery("#genK").val();
   var itemno1 = jQuery("#genId").val();
   var recip1 = jQuery("#basehtm").val();
+  var kkasc = jQuery("#kkascii").val();
   if (creator1 != 0 && food1 != 0 && itemno1 != 0 && recip1 != 0) {
-    var url = urbit_ + "?callback=ctrlqinst&genId=" + itemno + "&creatorN=" + creator + "&basehtm=" + recip + "&genK=" + food + "&dateQ=" + currentTime + "&action=insertbit";
+    var url = urbit_ + "?callback=ctrlqinst&genId=" + itemno + "&creatorN=" + creator + "&basehtm=" + recip + "&genK=" + food + "&dateQ=" + currentTime +  "&usrkk=" + kkasc +"&action=insertbit";
   
     var request = jQuery.ajax({
       crossDomain: true,
