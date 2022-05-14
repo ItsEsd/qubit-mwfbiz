@@ -73,12 +73,12 @@ function userCookie() {
             var cookusid = String(cookpost[1]);
             var paem = window.atob(cookusid);
             userprofetch(paem);
+            document.getElementById('kkascii').value= paem;
    }
 
      } 
  
  }
-
 function userprofetch(paem){
 var ur1="https://script.google.com/macros/s/";
 var ur2="AKfycbws_LnpAxZ6MMQK568aMZSOTAFsA2hdFDJkaB9m8aXcwZ9pciuZehl8ocXkRWADIH2dRA";
