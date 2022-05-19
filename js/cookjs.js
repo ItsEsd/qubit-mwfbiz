@@ -25,14 +25,14 @@ function getCookie(cname) {
         document.getElementById("imgcon").style.pointerEvents = "none";
         setTimeout(function(){
           $('#falsebacksigup').fadeIn('fast');
-          $('#sigcontainer').fadeIn('fast');},1800000);
+          $('#sigcontainer').fadeIn('fast');},3600000);
         } 
         else if(usergu != ""){
           document.getElementById("imgcon").style.pointerEvents = "none";
-          userCookie();
+          $('#qubitst').hide();
           setTimeout(function(){
                 $('#falsebacksigup').fadeIn('fast');
-                $('#sigcontainer').fadeIn('fast');},3600000);
+                $('#sigcontainer').fadeIn('fast');},1800000);
         }
         else {
           var url_string = window.location.href;
