@@ -1,28 +1,28 @@
 function getCookie(cname) {
-    var name = cname + "=";
-    var decodedCookie = decodeURIComponent(document.cookie);
-    var ca = decodedCookie.split(';');
-    for (var i = 0; i < ca.length; i++) {
-      var c = ca[i];
-      while (c.charAt(0) == ' ') {
-        c = c.substring(1);
-      }
-      if (c.indexOf(name) == 0) {
-        return c.substring(name.length, c.length);
-      }
-    }
-    return "";
-  }
+  var name = cname + "="; 
+  var decodedCookie = decodeURIComponent(document.cookie); 
+  var ca = decodedCookie.split(';'); 
+  for (var i = 0; i < ca.length; i++) {
+     var c = ca[i]; while (c.charAt(0) == ' ') { c = c.substring(1); } 
+     if (c.indexOf(name) == 0) { 
+      var cookstr = ca[i].split(name);
+      var cook = cookstr[1].split(".");
+      var paem = window.atob(cook[1]);
+      userprofetch(paem);
+      document.getElementById('kkascii').value= paem;
+      return c.substring(name.length, c.length); } 
+    } return ""; 
+  } 
         var user = getCookie("_ybizc0");
         var usergu = getCookie("_ybizv0");
         var userel = getCookie("_ybize0");
         if (user != "" ) {
         document.getElementById('falsebacksigup').style.display = "none";
         document.getElementById('sigcontainer').style.display = "none";
-        userCookie();
         } 
       else  if (userel != "" ) {
         document.getElementById("imgcon").style.pointerEvents = "none";
+        $('#qubitst').hide();
         setTimeout(function(){
           $('#falsebacksigup').fadeIn('fast');
           $('#sigcontainer').fadeIn('fast');},3600000);
@@ -62,23 +62,6 @@ function getCookie(cname) {
           setTimeout(function(){location.reload();},2000);
       }    
 
-function userCookie() {
-   var decodedCookie = decodeURIComponent(document.cookie); 
-   var ca = decodedCookie.split(';'); 
-   for (var i = 0; i < ca.length; i++) {
-      var c = ca[i]; 
-      var cookstr = ca[i].split('=');
-      var cookpost = cookstr[1].split('.');  
-   if(cookpost[1] != null){
-            var cookusid = String(cookpost[1]);
-            var paem = window.atob(cookusid);
-            userprofetch(paem);
-            document.getElementById('kkascii').value= paem;
-   }
-
-     } 
- 
- }
 function userprofetch(paem){
 var ur1="https://script.google.com/macros/s/";
 var ur2="AKfycbws_LnpAxZ6MMQK568aMZSOTAFsA2hdFDJkaB9m8aXcwZ9pciuZehl8ocXkRWADIH2dRA";
