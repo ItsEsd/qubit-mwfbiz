@@ -61,7 +61,10 @@ function getCookie(cname) {
           }
           setTimeout(function(){location.reload();},2000);
       }    
-
+function userCookie(){
+  var udid = $('#kkascii').val();
+  userprofetch(udid);
+}
 function userprofetch(paem){
 var ur1="https://script.google.com/macros/s/";
 var ur2="AKfycbws_LnpAxZ6MMQK568aMZSOTAFsA2hdFDJkaB9m8aXcwZ9pciuZehl8ocXkRWADIH2dRA";
