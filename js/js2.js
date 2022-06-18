@@ -59,6 +59,5 @@ else if(r =="yes" && usergu!=""){
 else{
   document.body.style.pointerEvents = 'none';
   $('#qbitbody').show();
-  $('#falqbody').hide();
 }
 
