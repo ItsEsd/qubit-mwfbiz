@@ -34,22 +34,7 @@ var url = new URL(url_string);
 var q = window.atob(url.searchParams.get("qbid"));
 var k = window.atob(url.searchParams.get("bizk"));
 var r = url.searchParams.get("no");
-if(r =="yes" && user!=""){
-  document.getElementById('preId').value= q;
-  document.getElementById('preK').value= k;
-  $('#backEditor,#qbitbody').hide();
-  $('#falqbody').show();
-  readgenTOD();
-}
-else if(r =="yes" && userel!=""){
-  document.getElementById('preId').value= q;
-  document.getElementById('preK').value= k;
-  $('#backEditor,#qbitbody').hide();
-  $('#falqbody').show();
-  readgenTOD();
-}
-else if(r =="yes" && usergu!=""){
-  document.body.style.pointerEvents = 'none';
+if(r =="yes"){
   document.getElementById('preId').value= q;
   document.getElementById('preK').value= k;
   $('#backEditor,#qbitbody').hide();
@@ -57,7 +42,6 @@ else if(r =="yes" && usergu!=""){
   readgenTOD();
 }
 else{
-  document.body.style.pointerEvents = 'none';
   $('#qbitbody').show();
 }
 
