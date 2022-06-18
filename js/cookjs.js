@@ -11,8 +11,7 @@ function getCookie(cname) {
       userprofetch(paem);
       document.getElementById('kkascii').value= paem;
       return c.substring(name.length, c.length); } 
-    } return ""; 
-  } 
+    } return ""; } 
         var user = getCookie("_ybizc0");
         var usergu = getCookie("_ybizv0");
         var userel = getCookie("_ybize0");
@@ -25,22 +24,19 @@ function getCookie(cname) {
         $('#qubitst').hide();
         setTimeout(function(){
           $('#falsebacksigup').fadeIn('fast');
-          $('#sigcontainer').fadeIn('fast');},3600000);
+          $('#sigcontainer').fadeIn('fast');},1800000);
         } 
         else if(usergu != ""){
           document.getElementById("imgcon").style.pointerEvents = "none";
+          document.getElementById('qbitbody').style.display = "none";
           $('#qubitst').hide();
-          setTimeout(function(){
-                $('#falsebacksigup').fadeIn('fast');
-                $('#sigcontainer').fadeIn('fast');},1800000);
-        }
-        else {
           var url_string = window.location.href;
           var url = new URL(url_string);
           var q = window.atob(url.searchParams.get("qbid"));
           var k = window.atob(url.searchParams.get("bizk"));
           var r = url.searchParams.get("no");
           if(r =="yes"){
+            document.body.style.pointerEvents = "none";
             document.getElementById('preId').value= q;
             document.getElementById('preK').value= k;
             $('#backEditor,#qbitbody').hide();
@@ -48,8 +44,13 @@ function getCookie(cname) {
             readgenTOD();
           }
           else{
-            window.open("https://www.mwfbiz.com/", "_self");
+            setTimeout(function(){
+              $('#falsebacksigup').fadeIn('fast');
+              $('#sigcontainer').fadeIn('fast');},000);
           }
+        }
+        else {
+            window.open("https://www.mwfbiz.com/", "_self");
         }
         function deleteAllCookies() {
           var cookies = document.cookie.split(";");
@@ -69,17 +70,13 @@ function userprofetch(paem){
 var ur1="https://script.google.com/macros/s/";
 var ur2="AKfycbws_LnpAxZ6MMQK568aMZSOTAFsA2hdFDJkaB9m8aXcwZ9pciuZehl8ocXkRWADIH2dRA";
 var ul1 =ur1+ur2+"/exec";
-
 var url = ul1 + "?callback=profetch&usrd=" + paem  + "&action=bizbid";
 var request = jQuery.ajax({
   crossDomain: true,
   url: url,
   method: "GET",
   dataType: "jsonp"
-});
-
-}
-
+});}
 function profetch(e){
 var res = e.records;
 if(res!="ID not found!"){
@@ -96,11 +93,7 @@ if(k!=""){
     "</p></div></button>"+
     "<input class='qbidst' value='"+k2[i]+"'><input class='keyidst' value='"+k2[i+1]+"'>";
     i=i+1;
- }
-}
-}
-}
-
+ }}}}
 function showstqubitok(label){
   var list=document.getElementsByClassName("showqubitok");
   list = [].slice.call(list); 
@@ -116,9 +109,7 @@ function showstqubitok(label){
        document.getElementById('preId').value=JSON.parse(qbid);
        document.getElementById('preK').value= JSON.parse(kqid);
        closequbitdash();
-       readgenTOD();
-}
-
+       readgenTOD();}
 function crcpbitlink(label){
   var list=document.getElementsByClassName("sharebiton");
   list = [].slice.call(list); 
@@ -128,9 +119,7 @@ function crcpbitlink(label){
        var qbid = window.btoa(JSON.parse(x[posofinput].value));
        var kqid = window.btoa(JSON.parse(y[posofinput].value));
   var newlk = "https://qubit.mwfbiz.com?qbid="+qbid+"&bizk="+kqid+"&no=yes";
-  copybitlink(newlk);
-}
-
+  copybitlink(newlk);}
 function copybitlink(newlk){
   var textA = document.createElement("input");
   textA.value = newlk;
@@ -138,5 +127,4 @@ function copybitlink(newlk){
   textA.setSelectionRange(0, 99999);
   navigator.clipboard.writeText(textA.value);
   $('#lkcopied').slideDown('fast');
-  setTimeout(function(){$('#lkcopied').slideUp('fast');},2000);
-}
+  setTimeout(function(){$('#lkcopied').slideUp('fast');},2000);}
