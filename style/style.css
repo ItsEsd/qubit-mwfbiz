@@ -667,3 +667,7 @@ color:white;
 #qbitbody{
   display: none;
 }
+
+#radioS span{
+  cursor: pointer;
+}
