@@ -292,6 +292,7 @@ function ctrlqrdbit(e){
   var inHTML = atob(prepostpre.imiContent);
   var Tim = res[0].TimeStamp;
   var Crby = res[0].Creator;
+  var admnd = $("#kkascii").val();
   if(res != "ID not found!"){
     jQuery("#imgcon").hide();jQuery("#bizprost").hide();
     $('#falqbody').hide();
@@ -304,8 +305,12 @@ function ctrlqrdbit(e){
     document.getElementById("loader_e").style.display = "none";
     jQuery('html,body').animate({
       scrollTop: jQuery("#preview").offset().top 
-    }, 1000);}else {  
-    document.getElementById('loaderTD').style.display = "none";
+    }, 1000);
+  if(admnd== res[0].RefId){document.body.style.pointerEvents ='auto';}
+  else if(res[0].RefId=="bizbebpi85gkgfhd4g58ld01n"){
+    document.body.style.pointerEvents ='auto';}
+  else{document.body.style.pointerEvents ='none';}
+  }else {document.getElementById('loaderTD').style.display = "none";
     document.getElementById("loader_e").style.display = "none";
   }}
 function getId(url) {
