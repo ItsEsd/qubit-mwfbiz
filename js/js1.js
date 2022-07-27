@@ -308,8 +308,14 @@ function ctrlqrdbit(e){
     }, 1000);
   if(admnd== res[0].RefId){document.body.style.pointerEvents ='auto';}
   else if(res[0].RefId=="bizbebpi85gkgfhd4g58ld01n"){
-    document.body.style.pointerEvents ='auto';}
-  else{document.body.style.pointerEvents ='none';}
+    document.body.style.pointerEvents ='auto';checkqbflag(1);
+    $(document).bind("contextmenu",function(e){
+      return false;
+        });}
+  else{document.body.style.pointerEvents ='none';checkqbflag(1);
+  $(document).bind("contextmenu",function(e){
+    return false;
+      });}
   }else {document.getElementById('loaderTD').style.display = "none";
     document.getElementById("loader_e").style.display = "none";
   }}
