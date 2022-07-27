@@ -39,9 +39,45 @@ if(r =="yes"){
   document.getElementById('preK').value= k;
   $('#backEditor,#qbitbody').hide();
   $('#falqbody').show();
+  $(document).bind("contextmenu",function(e){
+    return false;
+      });
   readgenTOD();
 }
 else{
   $('#qbitbody').show();
 }
 
+function checkqbflag(flag){
+  var userqb = getqbCookie("_ybizqb");
+  // console.log(userqb);
+  if(userqb == undefined){
+setqbcookie(flag);
+// ????? condition for First Visit..
+  }
+  else if (userqb > 2){
+$('#vtfdback').slideDown('fast');
+  }
+  else{
+    setqbcookie(userqb);
+  }
+}
+
+function getqbCookie(cname){
+  var name = cname + "="; 
+  var decodedCookie = decodeURIComponent(document.cookie); 
+  var ca = decodedCookie.split(';'); 
+  for (var i = 0; i < ca.length; i++) {
+     var c = ca[i];
+     var cookstr = ca[i].split(name);
+     if(cookstr[0] == ' '){
+      return parseInt(cookstr[1]);
+     }
+}}
+
+function setqbcookie(flagval){
+  if(flagval >= 1){
+flagval = flagval+1; console.log(flagval);
+document.cookie = "_ybizqb="+flagval+";path=/;domain=mwfbiz.com";
+  }
+}
