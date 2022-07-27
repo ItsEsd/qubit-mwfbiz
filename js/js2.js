@@ -57,6 +57,7 @@ setqbcookie(flag);
   }
   else if (userqb > 2){
 $('#vtfdback').slideDown('fast');
+document.body.style.pointerEvents ="auto";
   }
   else{
     setqbcookie(userqb);
