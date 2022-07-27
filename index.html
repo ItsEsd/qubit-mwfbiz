@@ -164,7 +164,7 @@
                 </div>
                 <div align="center" id="p2" style="display:none;padding:10px;">
                   <div style="box-shadow:0 1px 6px 0 grey;margin-top:20px;width:100%;max-width:400px;padding:10px;"><br>
-                    <form id="previewTODT" target="hidden_iframe">
+                    <form id="previewTODT" target="hidden_iframe" autocomplete="off">
                       <div id="previewT" style="margin-bottom:10px;"> <input class="form-control" type="text" id="preId" placeholder="QuBit Id" required /> <input class="form-control" id="preK" type="password" placeholder="Enter Key" required /> <span style="display:none;" id="notfound"></span><span id="loaderTD" class="spinner-border text-warning"></span></div><button type="submit" class="sub" value="Preview" id="preTOD">Show</button><button type="button" class="sub" onclick="document.getElementById('p2').style.display='none';document.getElementById('prepost').style.display='block';">Close</button>
                     </form> <br>
                   </div>
@@ -176,7 +176,7 @@
             </div>
           </div>
            <span ><a onclick="showqubitdash();" id="qubitst" style="cursor:pointer;color:white;margin-bottom:20px;padding-left:20px;font-size: 16px;">&#9680; Bit Archive</a></span>
-          <span class="qb"><a onclick="document.getElementById('disclaim').style.display='block';document.getElementById('readDisc').style.display='none';document.getElementById('editor').style.display='none';document.getElementById('showandpost').style.display='none';" id="readDisc" style="cursor:pointer;color:white;margin-bottom:20px;">Read Disclaimer >></a></span>
+          <span class="qb"><a onclick="document.getElementById('disclaim').style.display='block';document.getElementById('imgcon').style.display= 'none';document.getElementById('readDisc').style.display='none';document.getElementById('editor').style.display='none';document.getElementById('showandpost').style.display='none';" id="readDisc" style="cursor:pointer;color:white;margin-bottom:20px;">Read Disclaimer >></a></span>
         </div>
       </div>
       <div class="column">
@@ -314,7 +314,7 @@
           <p>All information in the Service is provided &quot;as is&quot;, with no guarantee of completeness, accuracy, timeliness or of the results obtained from the use of this information, and without warranty of any kind, express or implied, including, but not limited to warranties of performance, merchantability and fitness for a particular purpose.</p>
           <p>The Company will not be liable to You or anyone else for any decision made or action taken in reliance on the information given by the Service or for any consequential, special or similar damages, even if advised of the possibility of such damages.</p>
           <div align="center">
-            <div id="openMI" onclick="document.getElementById('disclaim').style.display='none';document.getElementById('readDisc').style.display='block';document.getElementById('editor').style.display='block';document.getElementById('showandpost').style.display='block';" style="cursor:pointer;"><img src="../image/blackglobegif.gif" width="40px;" style="padding-right:10px;"><span>Thank You </span></div>
+            <div id="openMI" onclick="document.getElementById('disclaim').style.display='none';document.getElementById('imgcon').style.display= 'block';document.getElementById('readDisc').style.display='block';document.getElementById('editor').style.display='block';document.getElementById('showandpost').style.display='block';" style="cursor:pointer;"><img src="../image/blackglobegif.gif" width="40px;" style="padding-right:10px;"><span>Thank You </span></div>
           </div>
         </div>
         <hr style="border-width:1px;border-color:white;width:98%">
@@ -399,7 +399,55 @@
       <div id="imgcon"><img class="mwimg" src="image/imgicon.gif" alt="MWFBIZ"><br>
         <div id="bizprost"><div id="bizuserin"></div></div>
       </div>
-    </section>  
+    </section> 
+    <section><div id="vtfdback" align="center">
+      <div class="container2" id="improfrm">
+      <form name="submit-to-google-sheet" id="formwall" onsubmit="return false">
+        <div class="form-group"> <label for="ImprovementQ">Feedback / Review* :</label> <textarea name="ImprovementQ" placeholder="Your Query" id="dimprv" required></textarea> </div>
+        <div class="row">
+          <div class="col"> <label for="Email">Email* :</label> <input type="email" list="Email" name="Email" class="form-control" id="dmail" placeholder="Your Email" required> </div>
+          <div class="col"> <label for="Name">Name* :</label> <input type="text" class="form-control" id="dname" placeholder="Your Name" name="Name" required> </div>
+        </div><br> <button style="background-color:#DD1D16;color:white;border-radius:4px;border:none; padding:10px 10px; width:100%;" type="submit" id="btnsubmit" value="Submit" data-toggle="modal" data-target="#WallModal">Submit</button>
+      </form>
+      <hr><div id="fdbacktw"><p><a target="_blank" href="https://feed.mwfbiz.com/survey">Take Survey</a> | <a target="_self" href="https://mwfbiz.com/"></atarget>mwfbiz.COM >></a></p></div>
+    </div>
+    <div align="center" id="notif" style="display:none;">
+      <div>
+        <h4>THANK YOU</h4><p><a href="https://mwfbiz.com" target="_self">mwfbiz.COM >></a></p>
+        <!--
+        <h5>M W F BIZ</h5>
+        <h6>|| Mind Without Fear ||</h6>
+       <div class="card-footer" style="background-color:#D10C06; color:white;"> <button type="button" onclick="Reset();document.getElementById('notif').style.display='none';document.getElementById('improfrm').style.display='block';" class="btn btn-light">Close</button> </div>--> 
+</div>
+      <script>
+        formwall.addEventListener('submit', (event) => {
+          var sendur = "https://script.google.com/macros/s/AKfycby4DqWAvEb7MqrTf1NW_PyUKgFBcxjmObqgHQ7kPStijyay_TxHJFveyAKd_QXthY8J/exec";
+          var qury = escape($('#dimprv').val());
+          var name = $('#dname').val();
+          var emid = $('#dmail').val();
+          var url = sendur + "?callback=ctrlq&dmail=" + emid + "&dname=" + name + "&dimprv=" + qury + "&action=inexp";
+          var request = jQuery.ajax({
+            crossDomain: true,
+            url: url,
+            method: "GET",
+            dataType: "jsonp"
+          });
+          document.getElementById('notif').style.display = "block";
+          document.getElementById('improfrm').style.display = "none";
+          console.log(url);
+          Reset();
+        });
+
+      </script>
+      <script>
+        function Reset() {
+          document.getElementById("formwall").reset();
+        }
+
+      </script>
+    </div>
+      
+      </div></section> 
     <section><div id="falqbody" align="center"><div>#QuBit</div></div></section>
       <iframe name="hidden_iframe" id="hidden_iframe" style="display:none;"></iframe>
     
