@@ -25,6 +25,9 @@ function getCookie(cname) {
         setTimeout(function(){
           $('#falsebacksigup').fadeIn('fast');
           $('#sigcontainer').fadeIn('fast');},1800000);
+          $(document).bind("contextmenu",function(e){
+            return false;
+              });
         } 
         else if(usergu != ""){
           document.getElementById("imgcon").style.pointerEvents = "none";
@@ -48,6 +51,9 @@ function getCookie(cname) {
               $('#falsebacksigup').fadeIn('fast');
               $('#sigcontainer').fadeIn('fast');},000);
           }
+          $(document).bind("contextmenu",function(e){
+            return false;
+              });
         }
         else {
             window.open("https://www.mwfbiz.com/", "_self");
@@ -64,8 +70,7 @@ function getCookie(cname) {
       }    
 function userCookie(){
   var udid = $('#kkascii').val();
-  userprofetch(udid);
-}
+  userprofetch(udid);}
 function userprofetch(paem){
 var ur1="https://script.google.com/macros/s/";
 var ur2="AKfycbws_LnpAxZ6MMQK568aMZSOTAFsA2hdFDJkaB9m8aXcwZ9pciuZehl8ocXkRWADIH2dRA";
