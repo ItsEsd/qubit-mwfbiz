@@ -45,6 +45,7 @@ function getCookie(cname) {
             $('#backEditor,#qbitbody').hide();
             $('#falqbody').show();
             readgenTOD();
+            checkqbflag(1);
           }
           else{
             setTimeout(function(){
