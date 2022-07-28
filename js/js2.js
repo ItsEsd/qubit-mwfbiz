@@ -56,7 +56,8 @@ setqbcookie(flag);
 // ????? condition for First Visit..
   }
   else if (userqb > 2){
-$('#vtfdback').slideDown('fast');
+$('#loader_e').hide();
+$('#vtfdback').slideDown('slow');
 document.body.style.pointerEvents ="auto";
   }
   else{
