@@ -315,7 +315,11 @@ function ctrlqrdbit(e){
   else{document.body.style.pointerEvents ='none';checkqbflag(1);
   $(document).bind("contextmenu",function(e){
     return false;
-      });}
+      });
+      document.onkeydown = function (e) {
+        return false;
+}  
+    }
   }else {document.getElementById('loaderTD').style.display = "none";
     document.getElementById("loader_e").style.display = "none";
   }}
