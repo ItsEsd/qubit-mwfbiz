@@ -79,7 +79,7 @@ function getqbCookie(cname){
 
 function setqbcookie(flagval){
   if(flagval >= 1){
-flagval = flagval+1; console.log(flagval);
+flagval = flagval+1;
 document.cookie = "_ybizqb="+flagval+";path=/;domain=mwfbiz.com";
   }
 }
