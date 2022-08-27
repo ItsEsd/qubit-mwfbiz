@@ -318,7 +318,8 @@ function ctrlqrdbit(e){
       });
       document.onkeydown = function (e) {
         return false;
-}  
+      }  
+      $('#btnsubmit,.form-control,textarea').attr('disabled','true');
     }
   }else {document.getElementById('loaderTD').style.display = "none";
     document.getElementById("loader_e").style.display = "none";
