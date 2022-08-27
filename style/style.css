@@ -686,6 +686,9 @@ color:white;
   background-color: #ffffff67;
   display: none;
 }
+.form-control:disabled{
+  background-color: #4b4b4b;
+}
 
 #improfrm{
   width:100%;
