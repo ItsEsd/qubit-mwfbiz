@@ -295,7 +295,7 @@ function ctrlqrdbit(e){
   var admnd = $("#kkascii").val();
   if(res != "ID not found!"){
     jQuery("#imgcon").hide();jQuery("#bizprost").hide();
-    $('#falqbody').hide();
+    $('#falqbody,#qbitbody').hide();
     document.getElementById('editor').style.display = "none";
     document.getElementById('notfound').style.display = "none";
     document.getElementById("preview").style.display = "block";
