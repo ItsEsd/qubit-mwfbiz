@@ -137,7 +137,7 @@
       text-align: left;
       overflow-y: auto;
       overflow-x: auto;
-      background-color: #161616;
+      background-color: #363636;
      
     }
 
@@ -202,14 +202,19 @@
     }
 
     .sub {
+      margin:4px;
       border: none;
       padding: 4px 10px;
-      margin: 2px;
     }
 
     #preview {
       width: 100%;
       max-width: 640px;
+      background:#363636; 
+      display:none;
+      padding:5px;
+      padding-top:20px;
+      /* margin-bottom:-80px; */
     }
 
     .toolbar {
@@ -339,7 +344,10 @@
       border-radius: 4px;
       padding: 20px;
     }
-
+#disclaimer h5{
+  color:#e9d208;
+  padding:6px;
+}
     #btnread {
       border: none;
       background-color: white;
@@ -777,4 +785,9 @@ padding-right:5px;
 }
 #fdbacktw a:hover{
 color: #dd1d16a8;
+}
+#backEditor{
+  bottom:60px;
+  right:20px;
+  position: fixed;
 }
