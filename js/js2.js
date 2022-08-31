@@ -1,5 +1,5 @@
 $('#backEditor').click(function(){
-
+   $('#qbitbody').fadeIn('slow');
     $('#preview').hide();
     $('#editor').fadeIn("slow");
     $('#showandpost').fadeIn("slow");
