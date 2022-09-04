@@ -791,3 +791,17 @@ color: #dd1d16a8;
   right:20px;
   position: fixed;
 }
+
+
+
+@media screen and (max-width: 600px) {
+  .img-small{
+    width:100%;
+    max-width:100%;
+  }
+
+  .img-mid{
+    width:100%;
+    max-width:100%;
+  }
+}
