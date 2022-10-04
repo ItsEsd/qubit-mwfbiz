@@ -312,7 +312,9 @@ function ctrlqrdbit(e){
     $(document).bind("contextmenu",function(e){
       return false;
         });}
-  else{document.body.style.pointerEvents ='none';checkqbflag(1);
+  else{
+    document.getElementById('preview').style.filter='blur(12px)';
+    document.body.style.pointerEvents ='auto';$('#vtfdback').slideDown('slow');
   $(document).bind("contextmenu",function(e){
     return false;
       });
