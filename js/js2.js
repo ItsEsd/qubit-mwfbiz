@@ -50,7 +50,6 @@ else{
 
 function checkqbflag(flag){
   var userqb = getqbCookie("_ybizqb");
-  // console.log(userqb);
   if(userqb == undefined){
 setqbcookie(flag);
 // ????? condition for First Visit..
@@ -58,6 +57,7 @@ setqbcookie(flag);
   else if (userqb > 2){
 $('#loader_e').hide();
 $('#vtfdback').slideDown('slow');
+document.getElementById('preview').style.filter='blur(12px)';
 document.body.style.pointerEvents ="auto";
   }
   else{
