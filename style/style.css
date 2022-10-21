@@ -251,7 +251,13 @@
     .youvidF:focus {
       border: 2px solid #dd1d16;
     }
-
+    .embdcon{
+      width:100%;
+      padding:6px;
+    }
+    .embdcon iframe{
+      width:100% !important;
+    }
     a.ApShare:focus,
     #btncopy:focus,
     a.ApShare:hover,
