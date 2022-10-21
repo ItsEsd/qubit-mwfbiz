@@ -131,6 +131,19 @@ function embed_vid() {
     formatDoc('insertHTML', '<iframe class="youvidF" src="//www.youtube.com/embed/' + myId + '" frameborder="0" allowfullscreen></iframe>');
   } else {
     return false;}}
+document.getElementById("crEmbed").addEventListener("input", embed_cod);
+function embed_cod(){
+  document.getElementById("previewembd").style.display = "block";
+  var cd = document.getElementById("crEmbed").value;
+  if (cd != '') {
+    document.getElementById("previewembd").innerHTML = "<div class='embdcon'>"+cd+"</div>";
+  } else {
+    return false;}
+}
+function insrtCod(){
+  var cd = document.getElementById("crEmbed").value;
+  formatDoc('insertHTML', "<div class='embdcon'>"+cd+"</div>");
+}
 function myFunction() {
   var copyText = document.getElementById("copyto");
   copyText.select();
