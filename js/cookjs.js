@@ -24,7 +24,8 @@ function getCookie(cname) {
         $('#qubitst').hide();
         setTimeout(function(){
           $('#falsebacksigup').fadeIn('fast');
-          $('#sigcontainer').fadeIn('fast');},1800000);
+          $('#sigcontainer').fadeIn('fast');},0000);
+          $('#backEditor,#qbitbody').hide();
           $(document).bind("contextmenu",function(e){
             return false;
               });
