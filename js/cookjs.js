@@ -23,9 +23,8 @@ function getCookie(cname) {
         document.getElementById("imgcon").style.pointerEvents = "none";
         $('#qubitst').hide();
         setTimeout(function(){
-          $('#falsebacksigup').fadeIn('fast');
-          $('#sigcontainer').fadeIn('fast');},0000);
-          $('#backEditor,#qbitbody').hide();
+          $('#backEditor,#qbitbody').fadeOut('slow');
+          $('#falqbody').show();},3000000);
           $(document).bind("contextmenu",function(e){
             return false;
               });
