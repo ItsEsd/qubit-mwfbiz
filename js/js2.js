@@ -88,7 +88,8 @@ if ( window.location !== window.parent.location ) {
   $('#footrspns').html('<div class="ifrmd"><span><a target="_blank" href="https://mwfbiz.com/privacy-policy/">◻ Privacy Policy</a><a target="_blank" href="https://mwfbiz.com/feedback/"> ◻ Feedback</a></span>© <a target="_blank" href="https://mwfbiz.com/">mwfbiz.COM</div>');
   $('#qubitst').hide();
 } 
-
+$('#footrspns').html('<div class="ifrmd"><span><a target="_blank" href="https://mwfbiz.com/privacy-policy/">Privacy Policy</a> | <a target="_blank" href="https://mwfbiz.com/feedback/">Feedback</a></span>© <a target="_blank" href="https://mwfbiz.com/">mwfbiz.COM</div>');
+  
 // /////////GET SET CARET ////////// FOR TEXTAREA ////
 
 // var ctrl = document.getElementById("textarea"); 
