@@ -142,7 +142,7 @@ function embed_cod(){
 }
 function insrtCod(){
   var cd = document.getElementById("crEmbed").value;
-  formatDoc('insertHTML', "<div class='embdcon'>"+cd+"</div>");
+  formatDoc('insertHTML', "<div class='embdcon'>"+cd+"</div><br>");
 }
 function myFunction() {
   var copyText = document.getElementById("copyto");
