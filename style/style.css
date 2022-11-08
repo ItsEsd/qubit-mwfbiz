@@ -257,6 +257,7 @@
     }
     .embdcon iframe{
       width:100% !important;
+      margin:0px;
     }
     a.ApShare:focus,
     #btncopy:focus,
