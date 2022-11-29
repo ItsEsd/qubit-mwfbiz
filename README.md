@@ -1,1 +1,1 @@
-# QuBit - M W F BIZ
+# QuBit - mwfbiz.COM
