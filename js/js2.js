@@ -50,19 +50,30 @@ else{
 
 function checkqbflag(flag){
   var userqb = getqbCookie("_ybizqb");
+  var userqxt = getqbCookie("_ybizqe");
   if(userqb == undefined){
 setqbcookie(flag);
 // ????? condition for First Visit..
   }
-  else if (userqb > 7){
+  else if (userqb > 3 && userqxt==undefined){
 $('#loader_e').hide();
 $('#vtfdback').slideDown('slow');
 document.getElementById('preview').style.filter='blur(12px)';
 document.body.style.pointerEvents ="auto";
   }
+  else if(userqb < userqxt){
+    setqbcookie(userqb);
+  }
+  else if (userqb > userqxt){
+    $('#loader_e').hide();
+    $('#vtfdback').slideDown('slow');
+    document.getElementById('preview').style.filter='blur(12px)';
+    document.body.style.pointerEvents ="auto";
+  }
   else{
     setqbcookie(userqb);
   }
+
 }
 
 function getqbCookie(cname){
