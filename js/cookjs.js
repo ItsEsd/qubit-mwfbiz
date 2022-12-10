@@ -49,6 +49,7 @@ function getCookie(cname) {
           }
           else{
             setTimeout(function(){
+              window.open('https://feed.mwfbiz.com/qubit-by-mbit','_self');
               $('#falsebacksigup').fadeIn('fast');
               $('#sigcontainer').fadeIn('fast');},000);
           }
