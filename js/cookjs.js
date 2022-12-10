@@ -84,7 +84,7 @@ var request = jQuery.ajax({
   dataType: "jsonp"
 });}
 function profetch(e){
-var res = e.records;
+var res = e.records; 
 if(res!="ID not found!"){
 document.getElementById('bizuserin').innerHTML ="<div class='bizusrp'>BIZ user: "+res[0].FirstName+" "+res[0].LastName+"<br>User email: "+res[0].Email+"</div>";
 document.getElementById('bizprost').style.backgroundImage = "none";
@@ -134,3 +134,55 @@ function copybitlink(newlk){
   navigator.clipboard.writeText(textA.value);
   $('#lkcopied').slideDown('fast');
   setTimeout(function(){$('#lkcopied').slideUp('fast');},2000);}
+
+  $('#adsescook').click(function(){
+    $('#cooklist').toggle();
+  });
+  document.getElementById('selckls').addEventListener('input',assignprc);
+  function assignprc(){
+    var assgnvl = document.getElementById('selckls').value;
+    document.getElementById('conckadd').innerHTML ="Pay: ₹" + assgnvl;
+  }
+
+  $('#conckadd').click(function(){
+    var assgnvl = document.getElementById('selckls').value;
+    var extndrld = assgnvl/20;
+
+ var optionsv = {
+    "key": "rzp_live_zeJJQym7llbiEc",
+    "amount":  assgnvl*1,
+    "currency": "INR",
+    "name": "Session Cookie",
+    "image": "../image/imgicon.gif",
+    "callback_url": "https://mwfbiz.com/privacy-policy/",
+    "handler": function(response) {
+      var payid = response.razorpay_payment_id;
+      var peid = "Visitor";
+      var psign = "Visitor";
+      var refid = "qbt" + Math.random().toString(36).substring(2, 8) + Math.random().toString(36).substring(2, 10);
+      var d = new Date();
+      var currentTime = d.toLocaleString();
+      var ur1 = 'https://script.google.com/macros/s/';
+      var ur2 = 'AKfycbxpVqtT4y1MDj4B1oc-VWI4-fhV3kqDJxzUSyNnkJ_wmQYajdXlU3qtjHdvYzDNEorJ5g';
+      var url = ur1 + ur2 + '/exec' + '?callback=ctrlqpcheck&tstamp=' + currentTime + '&tpid=' + payid + '&torid=' + peid + '&tpsign=' + psign + '&refid=' + refid + '&action=paycheck';
+      var request = jQuery.ajax({
+        crossDomain: true,
+        url: url,
+        method: "GET",
+        dataType: "jsonp"
+      });
+  document.cookie = "_ybizqe="+extndrld+";path=/;domain=mwfbiz.com";
+  document.cookie = "_ybizqb=true;"+"expires=Thu, 01 Jan 1970 00:00:00 GMT;path=/;domain=mwfbiz.com";
+  setTimeout(function() {
+    location.reload();
+  }, 2000);
+    },
+    "theme": {
+      "color": "#dd1d16"
+    }
+  };
+  var rzpv = new Razorpay(optionsv);
+  rzpv.open();
+  e.preventDefault(); 
+
+  })
