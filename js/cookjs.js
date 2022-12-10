@@ -150,7 +150,7 @@ function copybitlink(newlk){
 
  var optionsv = {
     "key": "rzp_live_zeJJQym7llbiEc",
-    "amount":  assgnvl*1,
+    "amount":  assgnvl*100,
     "currency": "INR",
     "name": "Session Cookie",
     "image": "../image/imgicon.gif",
