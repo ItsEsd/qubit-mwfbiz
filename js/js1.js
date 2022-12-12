@@ -335,6 +335,7 @@ function ctrlqrdbit(e){
         return false;
       }  
       $('#btnsubmit,.form-control,textarea').attr('disabled','true');
+      $('#adsescook').slideUp();
     }
   }else {document.getElementById('loaderTD').style.display = "none";
     document.getElementById("loader_e").style.display = "none";
