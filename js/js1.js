@@ -327,6 +327,8 @@ function ctrlqrdbit(e){
         });}
   else{
     document.getElementById('preview').style.filter='blur(12px)';
+    document.getElementById('preview').innerHTML = "";
+    document.getElementById('preview').style.padding="0px";
     document.body.style.pointerEvents ='auto';$('#vtfdback').slideDown('slow');
   $(document).bind("contextmenu",function(e){
     return false;
