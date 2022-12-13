@@ -630,7 +630,7 @@ display:none;
 }
 
 
-#imgcon{
+#imgcon,.imgcon{
   top: 20px;
   right: 20px;
   position: absolute;
