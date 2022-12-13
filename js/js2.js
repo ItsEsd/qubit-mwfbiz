@@ -59,6 +59,8 @@ setqbcookie(flag);
 $('#loader_e').hide();
 $('#vtfdback').slideDown('slow');
 document.getElementById('preview').style.filter='blur(12px)';
+document.getElementById('preview').innerHTML = "";
+document.getElementById('preview').style.padding="0px";
 document.body.style.pointerEvents ="auto";
   }
   else if(userqb < userqxt){
@@ -68,6 +70,8 @@ document.body.style.pointerEvents ="auto";
     $('#loader_e').hide();
     $('#vtfdback').slideDown('slow');
     document.getElementById('preview').style.filter='blur(12px)';
+    document.getElementById('preview').innerHTML = "";
+    document.getElementById('preview').style.padding="0px";
     document.body.style.pointerEvents ="auto";
   }
   else{
