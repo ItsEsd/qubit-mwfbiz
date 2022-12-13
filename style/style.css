@@ -650,7 +650,7 @@ transform: scale(1.06);
 .imgcon{
   top: 20px;
   right: 20px;
-  position: absolute;
+  position: fixed;
   display:block;
 }
 
