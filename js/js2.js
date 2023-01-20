@@ -55,7 +55,7 @@ function checkqbflag(flag){
 setqbcookie(flag);
 // ????? condition for First Visit..
   }
-  else if (userqb > 3 && userqxt==undefined){
+  else if (userqb > 5 && userqxt==undefined){
 $('#loader_e').hide();
 $('#vtfdback').slideDown('slow');
 document.getElementById('preview').style.filter='blur(12px)';
