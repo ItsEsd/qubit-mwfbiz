@@ -860,6 +860,20 @@ border-bottom-right-radius: 10px;
     width:100%;
     max-width:100%;
   }
+
+}
+
+
+@media screen and (max-width: 1080px) {
+  .img-small{
+    width:100%;
+    max-width:100%;
+  }
+
+  .img-mid{
+    width:100%;
+    max-width:100%;
+  }
   #frelt{
     display: none;
   }
@@ -868,7 +882,6 @@ border-bottom-right-radius: 10px;
  }
 
 }
-
 #adsescook{
   width:100%;
   background-color: #696969;
