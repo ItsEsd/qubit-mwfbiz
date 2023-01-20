@@ -24,7 +24,7 @@ function getCookie(cname) {
         $('#qubitst').hide();
         setTimeout(function(){
           $('#backEditor,#qbitbody').fadeOut('slow');
-          $('#falqbody').show();},3000000);
+          $('#falqbody').show();},0000);
           $(document).bind("contextmenu",function(e){
             return false;
               });
