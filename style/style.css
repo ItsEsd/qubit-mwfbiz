@@ -831,7 +831,22 @@ color: #dd1d16a8;
   right:20px;
   position: fixed;
 }
+#frelt{
+  top:0px;
+  right:120px;
+  height: 100%;
+  position: fixed;
+  z-index:1000;
 
+}
+#frelt iframe{
+border:0px;
+width: 100%;
+min-width:400px;
+height:440px;
+/* height: 100%; */
+border-radius: 10px;
+}
 
 
 @media screen and (max-width: 600px) {
@@ -844,6 +859,12 @@ color: #dd1d16a8;
     width:100%;
     max-width:100%;
   }
+  #frelt{
+    display: none;
+  }
+ #falqbody{
+  display: block;
+ }
 
 }
 
@@ -888,3 +909,5 @@ padding:2px 10px;
   padding:3px;
   padding-bottom:4px;
 }
+
+
