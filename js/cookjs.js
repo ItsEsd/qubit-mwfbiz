@@ -27,7 +27,7 @@ function getCookie(cname) {
           $('#showandpost').show();},0000);
           var lem = document.createElement('div');
           lem.id="frelt";
-          lem.innerHTML= "<iframe src='http://127.0.0.1:5503/index.html'></ifarme>"
+          lem.innerHTML= "<iframe src='http://imi.mwfbiz.com'></ifarme>"
           $('#showandpost').append(lem);
           $(document).bind("contextmenu",function(e){
             return false;
