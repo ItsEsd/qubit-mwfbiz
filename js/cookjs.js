@@ -23,8 +23,12 @@ function getCookie(cname) {
         document.getElementById("imgcon").style.pointerEvents = "none";
         $('#qubitst').hide();
         setTimeout(function(){
-          $('#backEditor,#qbitbody').fadeOut('slow');
-          $('#falqbody').show();},0000);
+          $('#editor,#readDisc').fadeOut('slow');
+          $('#showandpost').show();},0000);
+          var lem = document.createElement('div');
+          lem.id="frelt";
+          lem.innerHTML= "<iframe src='http://127.0.0.1:5503/index.html'></ifarme>"
+          $('#showandpost').append(lem);
           $(document).bind("contextmenu",function(e){
             return false;
               });
