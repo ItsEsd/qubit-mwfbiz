@@ -21,7 +21,7 @@ function getCookie(cname) {
         } 
       else  if (userel != "" ) {
         document.getElementById("imgcon").style.pointerEvents = "none";
-        $('#qubitst').hide();
+        $('#qubitst,#backEditor').hide();
         setTimeout(function(){
           $('#editor,#readDisc').fadeOut('slow');
           $('#showandpost').show();},0000);
