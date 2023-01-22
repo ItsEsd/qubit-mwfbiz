@@ -101,7 +101,7 @@ document.cookie = "_ybizqb="+flagval+";path=/;domain=mwfbiz.com";
 
 if ( window.location !== window.parent.location ) {
   $('#footrspns').html('<div class="ifrmd"><span><a target="_blank" href="https://mwfbiz.com/privacy-policy/">Privacy Policy</a> | <a target="_blank" href="https://mwfbiz.com/feedback/">Feedback</a></span>© <a target="_blank" href="https://mwfbiz.com/">mwfbiz.COM</div>');
-  $('#qubitst').hide(); document.getElementById('vtfdback').style.overflowY = "auto";
+  $('#qubitst').hide(); document.getElementById('vtfdback').style.overflowY = "auto";document.getElementById('improfrm').style.maxHeight = "300px";
 } 
   
 // /////////GET SET CARET ////////// FOR TEXTAREA ////
