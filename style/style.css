@@ -126,7 +126,9 @@
     #toolBar1 select {
       font-size: 10px;
     }
-
+option{
+  color:silver;
+}
     #textBox {
       min-width: 300px;
       max-width: 680px;
