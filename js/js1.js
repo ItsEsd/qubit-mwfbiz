@@ -111,7 +111,7 @@ function selectImg() {
 function CreateLink() {
   var sLnk = document.getElementById('crlink').value;
   if (sLnk != '' && sLnk != 'http://') {
-    formatDoc('createlink', sLnk)
+    formatDoc('createlink', sLnk);
   } else {
     return false}}
 function getId(url) {
