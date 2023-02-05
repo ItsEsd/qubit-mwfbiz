@@ -144,22 +144,6 @@ function insrtCod(){
   var cd = document.getElementById("crEmbed").value;
   formatDoc('insertHTML', "<div class='embdcon'>"+cd+"</div><br>");
 }
-function insrtTwt(){
-  var tw = document.getElementById("crtwlnk").value;
-  formatDoc('insertHTML', "<center><div class='social-embd'><blockquote class='twitter-tweet'><a href="+tw+"></a></blockquote></div></center><br>");
-  var scriptEleTwt = document.createElement("script");
-  scriptEleTwt.setAttribute("src", 'https://platform.twitter.com/widgets.js');
-  document.body.appendChild(scriptEleTwt);
-}
-// function insrtIns(){
-//   var ins = document.getElementById("crinlnk").value;
-//   formatDoc('insertHTML', "<div class='social-embd'><blockquote class='instagram-media'><a href="+ins+"></a></blockquote></div><br>");
-//   var scriptEleIns = document.createElement("script");
-//   scriptEleIns.setAttribute("src", 'https://www.instagram.com/embed.js');
-//   scriptEleIns.setAttribute("type", "text/javascript");
-//   scriptEleIns.setAttribute("async", "async");
-//   document.body.appendChild(scriptEleIns);
-// }
 function myFunction() {
   var copyText = document.getElementById("copyto");
   copyText.select();
