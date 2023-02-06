@@ -342,9 +342,6 @@ function ctrlqrdbit(e){
   }else {document.getElementById('loaderTD').style.display = "none";
     document.getElementById("loader_e").style.display = "none";
   }
-  var scriptEleTwt = document.createElement("script");
-  scriptEleTwt.setAttribute("src", 'https://platform.twitter.com/widgets.js');
-  document.body.appendChild(scriptEleTwt);
 }
 function getId(url) {
   var regExp = /^.*(youtu.be\/|v\/|u\/\w\/|embed\/|watch\?v=|\&v=)([^#\&\?]*).*/;
