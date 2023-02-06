@@ -16,6 +16,7 @@ function getCookie(cname) {
         var usergu = getCookie("_ybizv0");
         var userel = getCookie("_ybize0");
         if (user != "" ) {
+          $('#falqbody').hide();
         document.getElementById('falsebacksigup').style.display = "none";
         document.getElementById('sigcontainer').style.display = "none";
         } 
