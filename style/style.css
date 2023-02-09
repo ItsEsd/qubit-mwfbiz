@@ -310,11 +310,14 @@ option{
    .ifrmd a:hover{
     color:#dadada;
    }
+   .qb {
+    width: 100%;
+    text-align: right;
+   }
     .qb a {
       margin-right: 10px;
-      float: right;
       color: white;
-      margin: 20px;
+      margin: 0px;
       text-decoration: none;
     }
 
@@ -322,7 +325,17 @@ option{
       margin-right: 28px;
       transition: 0.3s;
     }
-
+    .qi{
+      color: #5a5a5a;font-size: 14px;
+    }
+.qi a{
+  text-decoration: none;
+  color: #5a5a5a;
+  font-size: 14px;
+}
+.qi a:hover{
+  color: #a4a4a4;
+}
     .sticky img,#footrspns img {
       width: 100%;
       max-width: 300px;
