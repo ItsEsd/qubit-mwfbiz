@@ -159,7 +159,7 @@ function copybitlink(newlk){
     "amount":  assgnvl*100,
     "currency": "INR",
     "name": "Session Cookie",
-    "image": "../image/imgicon.gif",
+    "image": "../image/mwfbizlogo.png",
     "callback_url": "https://mwfbiz.com/privacy-policy/",
     "handler": function(response) {
       var payid = response.razorpay_payment_id;
