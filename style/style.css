@@ -327,6 +327,10 @@ option{
     }
     .qi{
       color: #5a5a5a;font-size: 14px;
+      padding-top:10px;
+      padding-bottom:10px;
+      border-top:2px solid #8080807e;
+      border-bottom:2px solid #8080807e;
     }
 .qi a{
   text-decoration: none;
@@ -654,7 +658,6 @@ display:none;
 .mwimg{
   width: 60px;
   border-radius: 6px;
-  box-shadow: 0 1px 6px 0px #f10606;
   opacity: 1; 
  cursor: pointer;
 }
