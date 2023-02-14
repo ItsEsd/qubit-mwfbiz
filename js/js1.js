@@ -394,6 +394,14 @@ jQuery("#textBox").click(function() {
     scrollTop: jQuery("#textBox").offset().top - 24
   }, 1000);});
 jQuery("#openMI").click(function() {
+if(getCookie("_ybize0") !=""){
+  $("#imgcon,#readDisc,#showandpost").show();
+  $('#disclaim').hide();
+}else{
+  $("#imgcon,#readDisc,#showandpost,#editor").show();
+  $('#disclaim').hide();
+}
+
   jQuery('html,body').animate({
     scrollTop: jQuery(".sticky").offset().top - 4
   }, 1000);});
