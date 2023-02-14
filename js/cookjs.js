@@ -24,7 +24,7 @@ function getCookie(cname) {
         document.getElementById("imgcon").style.pointerEvents = "none";
         $('#qubitst,#backEditor').hide();
         setTimeout(function(){
-          $('#editor,#readDisc').fadeOut('slow');
+          $('#editor').fadeOut('slow');
           $('#showandpost').show();},0000);
           var lem = document.createElement('div');
           lem.id="frelt";
