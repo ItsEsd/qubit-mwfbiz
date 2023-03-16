@@ -26,6 +26,7 @@ gtag('config', 'G-NN8JWJQCQN');
   var user = getCookieHPG("_ybizc0");
   var usergu = getCookieHPG("_ybizv0");
   var userel = getCookieHPG("_ybize0");
+  var userm = getCookieHPG("_ybizm0");
   var url_string = window.location.href;
   var url = new URL(url_string);
   var q = window.atob(url.searchParams.get("qbid"));
@@ -38,7 +39,7 @@ gtag('config', 'G-NN8JWJQCQN');
     $('#falqbody').show();
     readgenTOD();
   } else {
-    if (usergu != "" || r =="") {
+    if (usergu != "" || r =="" || userm !="") {
       window.open("https://feed.mwfbiz.com/qubit-by-mbit", "_self");
     }
   }</script></head>
