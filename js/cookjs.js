@@ -16,9 +16,25 @@ function getCookie(cname) {
         var usergu = getCookie("_ybizv0");
         var userel = getCookie("_ybize0");
         if (user != "" ) {
-          $('#falqbody').hide();
+            
+  var decodedCookie = decodeURIComponent(document.cookie); 
+  var ca = decodedCookie.split(';');
+  for (var i = 0; i < ca.length; i++) {
+    var c = ca[i]; 
+    while (c.charAt(0) == ' ') { c = c.substring(1); 
+    } 
+    if (c.indexOf("_ybizc0") == 0) { 
+      var userelcook = c.substring(1).split('.');
+      if(window.atob(userelcook[0].split('ybizc0=')[1]) =="BIZADMN" && window.atob(userelcook[2]) =="valid"){ 
+        $('#falqbody').hide();
         document.getElementById('falsebacksigup').style.display = "none";
         document.getElementById('sigcontainer').style.display = "none";
+       }
+    } 
+    else{
+      window.open('https://feed.mwfbiz.com/qubit-by-mbit','_self');
+    }
+   }
         } 
       else  if (userel != "" ) {
         document.getElementById("imgcon").style.pointerEvents = "none";
