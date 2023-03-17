@@ -31,9 +31,6 @@ function getCookie(cname) {
         document.getElementById('sigcontainer').style.display = "none";
        }
     } 
-    else{
-      window.open('https://feed.mwfbiz.com/qubit-by-mbit','_self');
-    }
    }
         } 
       else  if (userel != "" ) {
