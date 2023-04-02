@@ -286,11 +286,7 @@ option{
       margin-top: 10px;
       margin-bottom: 10px;
     }
-    #footrspns{
-      position: -webkit-sticky;
-      position: sticky;
-      top: 20;
-      }
+   
     .sticky {
       position: -webkit-sticky;
       position: sticky;
