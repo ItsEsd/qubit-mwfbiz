@@ -303,6 +303,7 @@ option{
    .ifrmd{
     text-align: right;
     padding:16px;
+    color:white;
    }
    .ifrmd span{
     float: left;
