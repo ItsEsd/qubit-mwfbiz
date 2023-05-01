@@ -80,6 +80,14 @@ document.body.style.pointerEvents ="auto";
 
 }
 
+function setqbcookie(flagval){
+  if(flagval >= 0){
+flagval = flagval+1;
+document.cookie = "_ybizqb="+flagval+";path=/;domain=mwfbiz.com";
+  }
+}
+
+
 function getqbCookie(cname){
   var name = cname + "="; 
   var decodedCookie = decodeURIComponent(document.cookie); 
@@ -92,12 +100,7 @@ function getqbCookie(cname){
      }
 }}
 
-function setqbcookie(flagval){
-  if(flagval >= 1){
-flagval = flagval+1;
-document.cookie = "_ybizqb="+flagval+";path=/;domain=mwfbiz.com";
-  }
-}
+
 
 if ( window.location !== window.parent.location ) {
   $('#footrspns').html('<div class="ifrmd"><span><a target="_blank" href="https://mwfbiz.com/privacy-policy/">Privacy Policy</a> | <a target="_blank" href="https://mwfbiz.com/terms-of-use/">Terms of Use</a></span>© <a target="_blank" href="https://mwfbiz.com/">mwfbiz.COM</div>');
