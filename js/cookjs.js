@@ -156,6 +156,8 @@ function copybitlink(newlk){
 
   $('#adsescook').click(function(){
     $('#cooklist').toggle();
+    var objDiv = document.getElementById("improfrm");
+    objDiv.scrollTop = objDiv.scrollHeight;
   });
   document.getElementById('selckls').addEventListener('input',assignprc);
   function assignprc(){
