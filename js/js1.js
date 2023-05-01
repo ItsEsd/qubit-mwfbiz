@@ -277,28 +277,7 @@ function ctrlqinst(e) {
   }
 }
 
- function getCookieHPG(cname) {
-  var name = cname + "=";
-  var decodedCookie = decodeURIComponent(document.cookie);
-  var ca = decodedCookie.split(';');
-  for (var i = 0; i < ca.length; i++) {
-    var c = ca[i];
-    while (c.charAt(0) == ' ') {
-      c = c.substring(1);
-    }
-    if (c.indexOf(name) == 0) {
-      return c.substring(name.length, c.length);
-    }
-  }
-  return "";
-}
-
-var user = getCookieHPG("_ybizc0");
-var usergu = getCookieHPG("_ybizv0");
-var userel = getCookieHPG("_ybize0");
-var userm = getCookieHPG("_ybizm0");
-var userqb = getCookieHPG("_ybizqb");
-
+console.log(usergu);
 
 document.getElementById("preTOD").addEventListener("click", readgenTOD);
 function readgenTOD() {
@@ -345,8 +324,9 @@ function ctrlqrdbit(e){
     }, 1000);
   if(admnd== res[0].RefId){document.body.style.pointerEvents ='auto';}
   else if(res[0].RefId=="bizbebpi85gkgfhd4g58ld01n"){
+    document.body.style.pointerEvents ='auto';
     if(usergu==""){
-      document.body.style.pointerEvents ='auto';checkqbflag(1);
+       checkqbflag(1);
       $(document).bind("contextmenu",function(e){
         return false;
           });
