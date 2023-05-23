@@ -516,29 +516,24 @@ function userallbit(e){
     document.getElementById("closest").style.display = "block";
     document.getElementById("storedbits").style.display = "block";
     document.getElementById("storedbits").innerHTML +="<div style='border-bottom:1px solid grey;padding-top:10px;padding:10px;padding-bottom:10px;background-color:white;text-align:left;'>"+(i+2)/2+".<br>QuBit ID: "+ JSON.parse(k2[i])+"<br>Key: "+JSON.parse(k2[i+1])+
-    "<br><span style='float:right;padding-right:10px;padding-top:10px;'><button type='button' class='stqubitshow' onclick='showstqubite(this)'>Show</button></span><br><br>"+
+    "<br><span style='float:right;padding-right:10px;padding-top:10px;'><button type='button' class='stqubitshow' onclick='opnmnualqbt(this)'>Open in New Tab</button></span><br><br>"+
     "<input class='qbidst' value='"+k2[i]+"'><input class='keyidst' value='"+k2[i+1]+"'></div>";
     i=i+1;
  }$('#closegubitst').show();}
   else{
     document.getElementById("storedbits").innerHTML = "";
     document.getElementById("loader_e").style.display = "none";}}
-function showstqubite(label){
+function opnmnualqbt(label){
   var list=document.getElementsByClassName("stqubitshow");
   list = [].slice.call(list); 
   var posofinput = list.indexOf(label);
   var x = document.getElementsByClassName('qbidst');
   var y = document.getElementsByClassName('keyidst');
-       var qbid = x[posofinput].value;
-       var kqid = y[posofinput].value;
-     //  document.getElementById('storedbits').style.pointerEvents = "none";
-       document.getElementById('stqbid').value= qbid;
-       document.getElementById('stkeyid').value= kqid;
-       document.getElementById('posof').value= posofinput;
-       document.getElementById('preId').value=JSON.parse(qbid);
-       document.getElementById('preK').value= JSON.parse(kqid);
-       closequbitdash();
-       readgenTOD();}
+       var qbid = window.btoa(JSON.parse(x[posofinput].value));
+       var kqid = window.btoa(JSON.parse(y[posofinput].value));
+  var newlk = "https://qubit.mwfbiz.com?qbid="+qbid+"&bizk="+kqid+"&no=yes";
+  window.open(newlk, "_blank");
+       }
 function showqubitdash() {
 document.getElementById('bitstboard').style.height="100%";}
 function closequbitdash() {
