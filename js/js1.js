@@ -313,7 +313,7 @@ function ctrlqrdbit(e){
     var ext ="0";
     var nwon1 = [];
     var nwon2 = [];var kt=1;
-    if(usrl!=""){
+    if(usrl!="" && res[0].RefId !="bizbebpi85gkgfhd4g58ld01n"){
       for(var q=1;q<ckusrel.length;q+=3){
         if(window.atob(ckusrel[q])==res[0].RefId){ext="V"; 
         nwon1[0]=ckusrel[0];
