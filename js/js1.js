@@ -312,7 +312,7 @@ function ctrlqrdbit(e){
     var ckusrel = usrl.split('.');
     var ext ="0";
     var nwon1 = [];
-    var nwon2 = [];var kt=0;
+    var nwon2 = [];var kt=1;
     if(usrl!=""){
       for(var q=1;q<ckusrel.length;q+=3){
         if(window.atob(ckusrel[q])==res[0].RefId){ext="V"; 
@@ -325,7 +325,7 @@ function ctrlqrdbit(e){
       kt = kt+3;
       }
     }
-    var nwckusr = nwon1.join('.')+'.'+nwon2.join('.');
+    var nwckusr = nwon1.join('.')+nwon2.join('.');
     document.cookie = "_ybize0="+nwckusr+"; expires=" + expires + ";path=/;domain=mwfbiz.com";
     }
 
