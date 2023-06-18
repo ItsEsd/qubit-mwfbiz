@@ -38,10 +38,10 @@ function getCookie(cname) {
         $('#qubitst,#backEditor').hide();
         setTimeout(function(){
           $('#editor').fadeOut('slow');
-          $('#showandpost').show();},0000);
+          $('#showandpost').show();},100);
           var lem = document.createElement('div');
           lem.id="frelt";
-          lem.innerHTML= "<iframe src='https://imi.mwfbiz.com'></ifarme>"
+          lem.innerHTML= "<iframe src='https://imi.mwfbiz.com/'></ifarme>"
           $('#showandpost').append(lem);
           $(document).bind("contextmenu",function(e){
             return false;
@@ -69,7 +69,7 @@ function getCookie(cname) {
             setTimeout(function(){
               window.open('https://feed.mwfbiz.com/qubit-by-mbit','_self');
               $('#falsebacksigup').fadeIn('fast');
-              $('#sigcontainer').fadeIn('fast');},000);
+              $('#sigcontainer').fadeIn('fast');},100);
           }
           $(document).bind("contextmenu",function(e){
             return false;
