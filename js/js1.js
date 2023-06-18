@@ -277,8 +277,6 @@ function ctrlqinst(e) {
   }
 }
 
-console.log(usergu);
-
 document.getElementById("preTOD").addEventListener("click", readgenTOD);
 function readgenTOD() {
   jQuery("#preview").hide();
@@ -310,6 +308,27 @@ function ctrlqrdbit(e){
   var Crby = res[0].Creator;
   var admnd = $("#kkascii").val();
   if(res != "ID not found!"){
+    var usrl =getCookie("_ybize0");
+    var ckusrel = usrl.split('.');
+    var ext ="0";
+    var nwon1 = [];
+    var nwon2 = [];var kt=0;
+    if(usrl!=""){
+      for(var q=1;q<ckusrel.length;q+=3){
+        if(window.atob(ckusrel[q])==res[0].RefId){ext="V"; 
+        nwon1[0]=ckusrel[0];
+        nwon1[1]=ckusrel[q]; nwon1[2]=ckusrel[q+1]; nwon1[3]=ckusrel[q+2];
+        var expires = "expires=" + ckusrel[q+2];
+      }
+      else if(window.atob(ckusrel[q])!=res[0].RefId){
+        nwon2[kt]=ckusrel[q]; nwon2[kt+1]=ckusrel[q+1]; nwon2[kt+2]=ckusrel[q+2];
+      kt = kt+3;
+      }
+    }
+    var nwckusr = nwon1.join('.')+'.'+nwon2.join('.');
+    document.cookie = "_ybize0="+nwckusr+"; expires=" + expires + ";path=/;domain=mwfbiz.com";
+    }
+
     jQuery("#imgcon").hide();jQuery("#bizprost").hide();
     $('#falqbody,#qbitbody').hide();
     document.getElementById('editor').style.display = "none";
@@ -322,7 +341,12 @@ function ctrlqrdbit(e){
     jQuery('html,body').animate({
       scrollTop: jQuery("#preview").offset().top 
     }, 1000);
+  
+  
   if(admnd== res[0].RefId){document.body.style.pointerEvents ='auto';}
+  else if(usrl!="" && ext=="V"){
+    document.body.style.pointerEvents ='auto';
+  }
   else if(res[0].RefId=="bizbebpi85gkgfhd4g58ld01n"){
     document.body.style.pointerEvents ='auto';
     if(usergu==""){
@@ -333,24 +357,26 @@ function ctrlqrdbit(e){
     }
    }
   else{
-    document.getElementById('preview').style.filter='blur(12px)';
-    document.getElementById('preview').innerHTML = "";
-    document.getElementById('preview').style.padding="0px";
-    document.body.style.pointerEvents ='auto';$('#vtfdback').slideDown('slow');
-  $(document).bind("contextmenu",function(e){
-    return false;
-      });
-      document.onkeydown = function (e) {
-        return false;
-      }  
-      $('#btnsubmit,.form-control,textarea').attr('disabled','true');
-      $('#adsescook').slideUp();
+    flsdv()
     }
   }else {document.getElementById('loaderTD').style.display = "none";
     document.getElementById("loader_e").style.display = "none";
   }
 }
-
+function flsdv(){
+  document.getElementById('preview').style.filter='blur(12px)';
+  document.getElementById('preview').innerHTML = "";
+  document.getElementById('preview').style.padding="0px";
+  document.body.style.pointerEvents ='auto';$('#vtfdback').slideDown('slow');
+$(document).bind("contextmenu",function(e){
+  return false;
+    });
+    document.onkeydown = function (e) {
+      return false;
+    }  
+    $('#btnsubmit,.form-control,textarea').attr('disabled','true');
+    $('#adsescook').slideUp();
+}
 function getId(url) {
   var regExp = /^.*(youtu.be\/|v\/|u\/\w\/|embed\/|watch\?v=|\&v=)([^#\&\?]*).*/;
   var match = url.match(regExp);
