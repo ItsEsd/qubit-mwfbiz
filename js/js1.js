@@ -313,7 +313,7 @@ function ctrlqrdbit(e){
     var ext ="0";
     var nwon1 = [];
     var nwon2 = [];var kt=1;
-    if(usrl!="" && res[0].RefId !="bizbebpi85gkgfhd4g58ld01n"){
+    if(usrl!="" && res[0].RefId !="bizbebpi85gkgfhd4g58ld01n" && admnd !=res[0].RefId){
       for(var q=1;q<ckusrel.length;q+=3){
         if(window.atob(ckusrel[q])==res[0].RefId){ext="V"; 
         nwon1[0]=ckusrel[0];
@@ -328,7 +328,6 @@ function ctrlqrdbit(e){
     var nwckusr = nwon1.join('.')+nwon2.join('.');
     document.cookie = "_ybize0="+nwckusr+"; expires=" + expires + ";path=/;domain=mwfbiz.com";
     }
-
     jQuery("#imgcon").hide();jQuery("#bizprost").hide();
     $('#falqbody,#qbitbody').hide();
     document.getElementById('editor').style.display = "none";
