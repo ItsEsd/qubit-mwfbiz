@@ -8,8 +8,10 @@ function getCookie(cname) {
       var cookstr = ca[i].split(name);
       var cook = cookstr[1].split(".");
       var paem = window.atob(cook[1]);
-      userprofetch(paem);
-      document.getElementById('kkascii').value= paem;
+      if(cname =="_ybizc0"){
+        userprofetch(paem);
+        document.getElementById('kkascii').value= paem;
+      }
       return c.substring(name.length, c.length); } 
     } return ""; } 
         var user = getCookie("_ybizc0");
@@ -41,7 +43,8 @@ function getCookie(cname) {
           $('#showandpost').show();},100);
           var lem = document.createElement('div');
           lem.id="frelt";
-          lem.innerHTML= "<iframe src='https://imi.mwfbiz.com/'></ifarme>"
+          // lem.innerHTML= "<iframe src='https://imi.mwfbiz.com/'></ifarme>"
+          lem.innerHTML= "<iframe src='http://127.0.0.1:5503/'></ifarme>"
           $('#showandpost').append(lem);
           $(document).bind("contextmenu",function(e){
             return false;
