@@ -116,19 +116,51 @@ var fullscreenElement = document.body;
       enterFullscreen();
     }
   }
-
   function enterFullscreen() {
+    var fullscreenElement = document.documentElement;
+  
     if (fullscreenElement.requestFullscreen) {
-      fullscreenElement.requestFullscreen();
+      fullscreenElement.requestFullscreen()
+        .then(function () {
+          hideFooter();
+        })
+        .catch(function (error) {
+          console.error('Fullscreen request failed:', error);
+        });
     } else if (fullscreenElement.mozRequestFullScreen) { // Firefox
-      fullscreenElement.mozRequestFullScreen();
+      fullscreenElement.mozRequestFullScreen()
+        .then(function () {
+          hideFooter();
+        })
+        .catch(function (error) {
+          console.error('Fullscreen request failed:', error);
+        });
     } else if (fullscreenElement.webkitRequestFullscreen) { // Chrome, Safari, and Opera
-      fullscreenElement.webkitRequestFullscreen();
+      fullscreenElement.webkitRequestFullscreen()
+        .then(function () {
+          hideFooter();
+        })
+        .catch(function (error) {
+          console.error('Fullscreen request failed:', error);
+        });
     } else if (fullscreenElement.msRequestFullscreen) { // IE/Edge
-      fullscreenElement.msRequestFullscreen();
+      fullscreenElement.msRequestFullscreen()
+        .then(function () {
+          hideFooter();
+        })
+        .catch(function (error) {
+          console.error('Fullscreen request failed:', error);
+        });
     }
-    $('#footrspns').css('display','none');
   }
+  
+  function hideFooter() {
+    var footrspns = document.getElementById('footrspns');
+    if (footrspns) {
+      footrspns.style.display = 'none';
+    }
+  }
+  
 
   function exitFullscreen() {
     if (document.exitFullscreen) {
@@ -141,7 +173,7 @@ var fullscreenElement = document.body;
       document.msExitFullscreen();
     }
     $('#footrspns').css('display','block');
-  }
+  } 
   document.addEventListener('fullscreenchange', handleFullscreenChange);
   function handleFullscreenChange() {
     if (!document.fullscreenElement) {
