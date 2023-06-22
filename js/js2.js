@@ -125,7 +125,7 @@ var fullscreenElement = document.body;
           hideFooter();
         })
         .catch(function (error) {
-          console.error('Fullscreen request failed:', error);
+          window.open(window.location.href,'_blank');
         });
     } else if (fullscreenElement.mozRequestFullScreen) { // Firefox
       fullscreenElement.mozRequestFullScreen()
@@ -133,7 +133,7 @@ var fullscreenElement = document.body;
           hideFooter();
         })
         .catch(function (error) {
-          console.error('Fullscreen request failed:', error);
+          window.open(window.location.href,'_blank');
         });
     } else if (fullscreenElement.webkitRequestFullscreen) { // Chrome, Safari, and Opera
       fullscreenElement.webkitRequestFullscreen()
@@ -141,7 +141,7 @@ var fullscreenElement = document.body;
           hideFooter();
         })
         .catch(function (error) {
-          console.error('Fullscreen request failed:', error);
+          window.open(window.location.href,'_blank');
         });
     } else if (fullscreenElement.msRequestFullscreen) { // IE/Edge
       fullscreenElement.msRequestFullscreen()
@@ -149,7 +149,7 @@ var fullscreenElement = document.body;
           hideFooter();
         })
         .catch(function (error) {
-          console.error('Fullscreen request failed:', error);
+          window.open(window.location.href,'_blank');
         });
     }
   }
