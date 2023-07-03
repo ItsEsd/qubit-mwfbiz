@@ -17,6 +17,7 @@ function getCookie(cname) {
         var user = getCookie("_ybizc0");
         var usergu = getCookie("_ybizv0");
         var userel = getCookie("_ybize0");
+        var userm = getCookie("_ybizm0");
         if (user != "" ) {
             
   var decodedCookie = decodeURIComponent(document.cookie); 
@@ -50,7 +51,7 @@ function getCookie(cname) {
             return false;
               });
         } 
-        else if(usergu != ""){
+        else if(usergu != "" || userm !="" ){
           document.getElementById("imgcon").style.pointerEvents = "none";
           document.getElementById('qbitbody').style.display = "none";
           $('#qubitst').hide();
