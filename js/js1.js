@@ -348,7 +348,7 @@ function ctrlqrdbit(e){
   }
   else if(res[0].RefId=="bizbebpi85gkgfhd4g58ld01n"){
     document.body.style.pointerEvents ='auto';
-    if(usergu==""){
+    if(user ==""){
        checkqbflag(1);
       $(document).bind("contextmenu",function(e){
         return false;
