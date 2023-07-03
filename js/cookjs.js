@@ -19,7 +19,6 @@ function getCookie(cname) {
         var userel = getCookie("_ybize0");
         var userm = getCookie("_ybizm0");
         if (user != "" ) {
-            
   var decodedCookie = decodeURIComponent(document.cookie); 
   var ca = decodedCookie.split(';');
   for (var i = 0; i < ca.length; i++) {
@@ -32,6 +31,24 @@ function getCookie(cname) {
         $('#falqbody').hide();
         document.getElementById('falsebacksigup').style.display = "none";
         document.getElementById('sigcontainer').style.display = "none";
+       }
+       var url_string = window.location.href;
+       var url = new URL(url_string);
+       var q = window.atob(url.searchParams.get("qbid"));
+       var k = window.atob(url.searchParams.get("bizk"));
+       var r = url.searchParams.get("no");
+       if(r =="yes"){
+         document.getElementById('preId').value= q;
+         document.getElementById('preK').value= k;
+         $('#backEditor,#qbitbody').hide();
+         $('#falqbody').show();
+         $(document).bind("contextmenu",function(e){
+           return false;
+             });
+         readgenTOD();
+       }
+       else{
+         $('#qbitbody').show();
        }
     } 
    }
@@ -47,6 +64,19 @@ function getCookie(cname) {
           lem.innerHTML= "<iframe src='https://imi.mwfbiz.com/'></ifarme>"
           // lem.innerHTML= "<iframe src='http://127.0.0.1:5503/'></ifarme>"
           $('#showandpost').append(lem);
+          var url_string = window.location.href;
+          var url = new URL(url_string);
+          var q = window.atob(url.searchParams.get("qbid"));
+          var k = window.atob(url.searchParams.get("bizk"));
+          var r = url.searchParams.get("no");
+          if(r =="yes"){
+            document.body.style.pointerEvents = "none";
+            document.getElementById('preId').value= q;
+            document.getElementById('preK').value= k;
+            $('#backEditor,#qbitbody').hide();
+            $('#falqbody').show();
+            readgenTOD();
+          }
           $(document).bind("contextmenu",function(e){
             return false;
               });
@@ -67,7 +97,6 @@ function getCookie(cname) {
             $('#backEditor,#qbitbody').hide();
             $('#falqbody').show();
             readgenTOD();
-            checkqbflag(1);
           }
           else{
             setTimeout(function(){
