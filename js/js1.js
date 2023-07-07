@@ -177,7 +177,7 @@ function limitChar() {
   var valuee = jQuery('#inHtml').val();
   var str = String(valuee);
   var len = str.length;
-  if (len >= 7000) {
+  if (len >= 18000) {
     document.getElementById("CharExcd").style.display = "block";
     document.getElementById("poTOD").disabled = true;
     document.getElementById("confirmK").disabled = true;
@@ -190,7 +190,7 @@ jQuery('#confirmK').on('keyup', function() {
   var valuee = jQuery('#inHtml').val();
   var str = String(valuee);
   var len = str.length;
-  if (jQuery('#genK').val() == jQuery('#confirmK').val() && len <= 7000) {
+  if (jQuery('#genK').val() == jQuery('#confirmK').val() && len <= 18000) {
     jQuery('#message').html('Matching').css('font-size', '12px');
     document.getElementById('poTOD').disabled = false;
   } else {
@@ -227,9 +227,10 @@ function dateUp() {
   var days = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
   var currentTime = days[d.getDay()] + ', ' + months[d.getMonth()] + ' ' + d.getDate() + ' - ' + d.getFullYear();
   document.getElementById('dateQ').value = currentTime;}
-postTODT.addEventListener('submit', (event) => {
+
+ postTODT.addEventListener('submit', (event) => {
   var ur1= "https://script.google.com/macros/s/";
-  var ur2 = "AKfycbzPe_DiGzy_xlIv0R_YoYB7u4SlG0cX6RXTKybbGbvgWbqKyhHF4P69Sf74eQENPN6e";
+  var ur2 = "AKfycbwUL6fFKpk-CinAXy61nSD2Xndy1v6ybbj-_HCTGnwG7Xic7KhdkMqaEDeDY9Yi1V7-";
   var urbit_ = ur1+ur2+"/exec";
     document.getElementById("poTOD").disabled = true;
   document.getElementById("loader-qb").style.display = "block";
@@ -237,6 +238,8 @@ postTODT.addEventListener('submit', (event) => {
   var food = escape(JSON.stringify(jQuery("#genK").val()));
   var itemno = escape(JSON.stringify(jQuery("#genId").val()));
   var recip = escape(JSON.stringify(jQuery("#basehtm").val()));
+  var splitString =splitStringByLength(recip,4500);
+  var clln = splitString.length;   var urlmd = [];var urmi;
   var currentTime = jQuery("#dateQ").val();
   var creator1 = jQuery("#creatorN").val();
   var food1 = jQuery("#genK").val();
@@ -244,37 +247,86 @@ postTODT.addEventListener('submit', (event) => {
   var recip1 = jQuery("#basehtm").val();
   var kkasc = jQuery("#kkascii").val();
   if (creator1 != 0 && food1 != 0 && itemno1 != 0 && recip1 != 0) {
-    var url = urbit_ + "?callback=ctrlqinst&genId=" + itemno + "&creatorN=" + creator + "&basehtm=" + recip + "&genK=" + food + "&dateQ=" + currentTime +  "&usrkk=" + kkasc +"&action=insertbit";
-    var request = jQuery.ajax({
-      crossDomain: true,
-      url: url,
-      method: "GET",
-      dataType: "jsonp"});
-    var creator = escape(JSON.stringify(jQuery("#creatorN").val()));
-    var food1 = jQuery("#genK").val();
-    var itemno1 = jQuery("#genId").val();
-    document.getElementById("preId").value=itemno1;
-    document.getElementById("preK").value=food1;
-    document.getElementById("msg").style.display = "block";
-      document.getElementById("whatsAppShare").style.display = "block";
-      document.getElementById("copytoC").style.display = "block";
-      document.getElementById("msg").innerHTML = "QuBit Stored.";
-      var itemno1 = escape(JSON.stringify(jQuery("#genId").val()));
-      var food1 = escape(JSON.stringify(jQuery("#genK").val()));
-      var item = JSON.stringify(jQuery("#genId").val());
-      var foodF = JSON.stringify(jQuery("#genK").val());
-      document.getElementById("whatsAppShare").innerHTML = "<a title='Share On WhatsApp' class='ApShare' style='font-size:14px; text-decoration:none;color:#008000;background:#e6e6e6;padding:4px 10px;border-radius:4px;' type='button' target='_blank' href='https://wa.me/?text=" + creator + " has created a QuBit. Create your QuBit and share at https://qubit.mwfbiz.com. Shared QuBit ID : " + itemno1 + " Key: " + food1 + " N.B: Use at your own risk.' data-action='share/whatsapp/share'><i class='fa fa-whatsapp' style='font-size:28px;color:green;'></i></a><a title='Send SMS' class='ApShare' style='font-size:14px;margin-top:10px; text-decoration:none;color:#0c29cd;background:#e6e6e6;padding:4px 10px;border-radius:4px;' target='_parent' type='button' href='sms:?body=" + creator + " has created a QuBit. Create your QuBit and share at https://qubit.mwfbiz.com. Shared QuBit ID : " + itemno1 + " Key: " + food1 + " N.B: Use at your own risk.'><i class='fa fa-comments-o' style='font-size:28px;color:#0c29cd;'></i></a><a title='Send Mail' class='ApShare' style='font-size:14px;margin-top:10px; margin-left:6px;text-decoration:none;color:#0c29cd;background:#e6e6e6;padding:4px 10px;border-radius:4px;' target='_parent' type='button' href='mailto:?body=" + creator + " has created a QuBit. Create your QuBit and share at https://qubit.mwfbiz.com. Shared QuBit ID : " + itemno1 + " Key: " + food1 + " N.B: Use at your own risk.'><i class='fa fa-envelope' style='font-size:28px;color:#cc6600;'></i></a>";
-      document.getElementById("copyto").value = "ID: " + item + " KEY: " + foodF;
-  } else {
+    for(var k=0;k<clln;k++){
+      var urrl = urmi+k;
+      urrl = urbit_ + "?callback=ctrlqinst&genId=" + itemno + "&creatorN=" + creator + "&basehtm=" + (splitString[k]) + "&genK=" + food + "&dateQ=" + currentTime +  "&usrkk=" + kkasc +"&ptno=" + k +"&action=insertbit";
+      urlmd[k] = urrl;
+     }
+     makeAjaxRequest(urlmd,0);
+     var element = document.getElementById('genstrngary');
+      if (element !== null) {
+        element.value= JSON.stringify(urlmd);
+      }
+      else{
+        var elem = document.createElement('input');
+        elem.id='genstrngary';elem.value="";
+        elem.value = JSON.stringify(urlmd);
+        elem.style.display = 'none';
+      }
+     $('body').append(elem);
+    document.getElementById("loader-potd").style.display ="block";
+   }
+    else {
     return false;}return false;});
+
+    function splitStringByLength(str, length) {
+      var nwaary = [];
+      for (var i = 0; i < str.length; i += length) {
+        nwaary.push(str.substring(i, i + length));
+      }
+      return nwaary;
+    }
+    function makeAjaxRequest(urlmi,ptn) {
+        var request = $.ajax({
+          crossDomain: true,
+          url: urlmi[ptn],
+          method: "GET",
+          dataType: "jsonp"
+        }); 
+        request.fail(function(textStatus) {
+          if (textStatus.status === 404) {
+            request.abort();alert('Request aborted');
+          }
+        });
+  }
+
 function ctrlqinst(e) {
-  var res = e.result;
-  if(res=="Insertion successful!") {
-    document.getElementById("loader-qb").style.display = "none";
-  }
-  else{
-    document.getElementById("loader-qb").style.display = "none";
-  }
+  var upsts = e.result.split('/');
+  var arrystng = [];
+  arrystng = JSON.parse(document.getElementById('genstrngary').value);
+  var flln= arrystng.length; 
+  // console.log(e.result,arrystng);
+  if(upsts[0]==='updated'){
+    var upvl = parseInt(upsts[1]); 
+    var nxtcl = upvl+1;
+    if(nxtcl<flln){
+      makeAjaxRequest(arrystng,nxtcl)
+    }
+    else if(nxtcl=flln){
+        var creator = escape(JSON.stringify(jQuery("#creatorN").val()));
+        var food1 = jQuery("#genK").val();
+        var itemno1 = jQuery("#genId").val();
+        document.getElementById("preId").value=itemno1;
+        document.getElementById("preK").value=food1;
+        document.getElementById("msg").style.display = "block";
+        document.getElementById("whatsAppShare").style.display = "block";
+        document.getElementById("copytoC").style.display = "block";
+        document.getElementById("msg").innerHTML = "QuBit Stored.";
+        var itemno1 = escape(JSON.stringify(jQuery("#genId").val()));
+        var food1 = escape(JSON.stringify(jQuery("#genK").val()));
+        var item = JSON.stringify(jQuery("#genId").val());
+        var foodF = JSON.stringify(jQuery("#genK").val());
+        document.getElementById("whatsAppShare").innerHTML = "<a title='Share On WhatsApp' class='ApShare' style='font-size:14px; text-decoration:none;color:#008000;background:#e6e6e6;padding:4px 10px;border-radius:4px;' type='button' target='_blank' href='https://wa.me/?text=" + creator + " has created a QuBit. Create your QuBit and share at https://qubit.mwfbiz.com. Shared QuBit ID : " + itemno1 + " Key: " + food1 + " N.B: Use at your own risk.' data-action='share/whatsapp/share'><i class='fa fa-whatsapp' style='font-size:28px;color:green;'></i></a><a title='Send SMS' class='ApShare' style='font-size:14px;margin-top:10px; text-decoration:none;color:#0c29cd;background:#e6e6e6;padding:4px 10px;border-radius:4px;' target='_parent' type='button' href='sms:?body=" + creator + " has created a QuBit. Create your QuBit and share at https://qubit.mwfbiz.com. Shared QuBit ID : " + itemno1 + " Key: " + food1 + " N.B: Use at your own risk.'><i class='fa fa-comments-o' style='font-size:28px;color:#0c29cd;'></i></a><a title='Send Mail' class='ApShare' style='font-size:14px;margin-top:10px; margin-left:6px;text-decoration:none;color:#0c29cd;background:#e6e6e6;padding:4px 10px;border-radius:4px;' target='_parent' type='button' href='mailto:?body=" + creator + " has created a QuBit. Create your QuBit and share at https://qubit.mwfbiz.com. Shared QuBit ID : " + itemno1 + " Key: " + food1 + " N.B: Use at your own risk.'><i class='fa fa-envelope' style='font-size:28px;color:#cc6600;'></i></a>";
+        document.getElementById("copyto").value = "ID: " + item + " KEY: " + foodF;
+        document.getElementById('genstrngary').value="";
+        document.getElementById("genK").value ="";
+        document.getElementById("confirmK").value ="";
+        document.getElementById("loader-qb").style.display = "none";
+    }
+    else{
+      return;
+    }
+}
 }
 
 document.getElementById("preTOD").addEventListener("click", readgenTOD);
