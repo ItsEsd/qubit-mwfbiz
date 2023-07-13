@@ -177,7 +177,7 @@ function limitChar() {
   var valuee = jQuery('#inHtml').val();
   var str = String(valuee);
   var len = str.length;
-  if (len >= 18000) {
+  if (len >= 30000) {
     document.getElementById("CharExcd").style.display = "block";
     document.getElementById("poTOD").disabled = true;
     document.getElementById("confirmK").disabled = true;
@@ -190,7 +190,7 @@ jQuery('#confirmK').on('keyup', function() {
   var valuee = jQuery('#inHtml').val();
   var str = String(valuee);
   var len = str.length;
-  if (jQuery('#genK').val() == jQuery('#confirmK').val() && len <= 18000) {
+  if (jQuery('#genK').val() == jQuery('#confirmK').val() && len <= 30000) {
     jQuery('#message').html('Matching').css('font-size', '12px');
     document.getElementById('poTOD').disabled = false;
   } else {
