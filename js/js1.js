@@ -285,7 +285,7 @@ function dateUp() {
         }); 
         request.fail(function(textStatus) {
           if (textStatus.status === 404) {
-            request.abort();alert('Request aborted');
+            request.abort();alert('Request aborted.');
           }
         });
   }
