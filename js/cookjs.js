@@ -53,12 +53,9 @@ function getCookie(cname) {
     } 
    }
         } 
-      else  if (userel != "" ) {
+      else  if (userel != "" ) { 
         document.getElementById("imgcon").style.pointerEvents = "none";
-        $('#qubitst,#backEditor').hide();
-        setTimeout(function(){
-          $('#editor').fadeOut('slow');
-          $('#showandpost').show();},100);
+        $('#qubitst,#backEditor,#editor').empty();$('#showandpost').show();
           var lem = document.createElement('div');
           lem.id="frelt";
           lem.innerHTML= "<iframe src='https://imi.mwfbiz.com/'></ifarme>"
@@ -69,7 +66,7 @@ function getCookie(cname) {
           var q = window.atob(url.searchParams.get("qbid"));
           var k = window.atob(url.searchParams.get("bizk"));
           var r = url.searchParams.get("no");
-          if(r =="yes"){
+          if(r ==="yes"){
             document.body.style.pointerEvents = "none";
             document.getElementById('preId').value= q;
             document.getElementById('preK').value= k;
