@@ -74,6 +74,9 @@ function getCookie(cname) {
             $('#falqbody').show();
             readgenTOD();
           }
+          else{
+            $('#qbitbody').show();
+          }
           $(document).bind("contextmenu",function(e){
             return false;
               });
