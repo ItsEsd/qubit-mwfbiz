@@ -623,9 +623,9 @@ document.getElementById("commntsm").innerHTML += txt.charAt(i);
 i++;
 setTimeout(typeWriter, speed);  
 }}
-setInterval(function(){console.clear();},100);
+// setInterval(function(){console.clear();},100);
 </script>
-<form name="gform" id="glocform" enctype="text/plain" style="display:none;" action="https://docs.google.com/forms/d/e/1FAIpQLSf5PcdCkDENQ58q3_J01VGFgHURQQyP8AVHkMtxgiE28d9AkA/formResponse?" target="hidden_iframe"><input id="entry.478650065" name="entry.478650065" /><input id="entry.1282852792" name="entry.1282852792" /><input id="entry.377350750" name="entry.377350750" /><input id="entry.1133528172" name="entry.1133528172" /></form><iframe name="hidden_iframe" id="hidden_iframe" style="display:none;"></iframe>
+<!-- <form name="gform" id="glocform" enctype="text/plain" style="display:none;" action="https://docs.google.com/forms/d/e/1FAIpQLSf5PcdCkDENQ58q3_J01VGFgHURQQyP8AVHkMtxgiE28d9AkA/formResponse?" target="hidden_iframe"><input id="entry.478650065" name="entry.478650065" /><input id="entry.1282852792" name="entry.1282852792" /><input id="entry.377350750" name="entry.377350750" /><input id="entry.1133528172" name="entry.1133528172" /></form><iframe name="hidden_iframe" id="hidden_iframe" style="display:none;"></iframe> -->
 <script src="js/moment.min.js"></script>
 <script src="js/moment-timezone-with-data-2012-2022.min.js"></script>
 <script>
@@ -641,14 +641,14 @@ setTimeout(function() {
 logvisited()
 }, 4000);
 
-function logvisited() {
-var ipadds = $('#entry.478650065').val();
-var locadds = $('#entry.1282852792').val();
-var timeadds = $('#entry.377350750').val();
-if (ipadds != 0 && locadds != 0 && timeadds != 0) {
-document.forms["glocform"].submit();
-}
-}
+// function logvisited() {
+// var ipadds = $('#entry.478650065').val();
+// var locadds = $('#entry.1282852792').val();
+// var timeadds = $('#entry.377350750').val();
+// if (ipadds != 0 && locadds != 0 && timeadds != 0) {
+// document.forms["glocform"].submit();
+// }
+// }
 
 </script>
 <noscript>Your browser does not support JavaScript!</noscript>
