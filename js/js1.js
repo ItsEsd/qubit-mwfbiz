@@ -340,7 +340,7 @@ function readgenTOD() {
     document.getElementById("loader_e").style.display = "block";
     document.getElementById('notfound').style.display = "none";
 var ur1="https://script.google.com/macros/s/";
-var ur2="AKfycbwbemphrZamYwb0Z00hi4rBF1h5tE0yeTMBVvB4eB6lSFQBYBJ9gS0OrCw3ibgBiN5cXw";
+var ur2="AKfycbxgoMJG_7w2prxxcsunJmr0eC3FwaY836OFJiUlU9U12br37Ovk3KmpWPzCPZSK7TLZ7g";
 var urbit= ur1+ur2+"/exec";
    var url = urbit + "?callback=ctrlqrdbit&preId=" + itemno + "&preK=" + food +  "&action=genbit";
    var request = jQuery.ajax({
@@ -353,9 +353,9 @@ var urbit= ur1+ur2+"/exec";
   }}
 function ctrlqrdbit(e){
   var res = e.records;
-  var resdall = res[0].OBDMhtm;
+  var resdall = res[0].QuBitCon;
   var prepostpre = JSON.parse(JSON.parse(resdall));
-  var inHTML = atob(prepostpre.imiContent);
+  var inHTML = atob(prepostpre.QBContent);
   var Tim = res[0].TimeStamp;
   var Crby = res[0].Creator;
   var admnd = $("#kkascii").val();
@@ -491,13 +491,12 @@ if(getCookie("_ybize0") !=""){
     scrollTop: jQuery(".sticky").offset().top - 4
   }, 1000);});
 stqubitfrm.addEventListener('submit', (event) => {
-  var jsonbit = jQuery("#jsonbit").val();
   var bitid = JSON.stringify(jQuery("#bitid").val());
   var bitpass = escape(JSON.stringify(jQuery("#bitpass").val()));
   if (bitid != 0 && bitpass != 0) {
     document.getElementById("loader_e").style.display = "block";
     var ur1="https://script.google.com/macros/s/";
-    var ur2="AKfycbwbemphrZamYwb0Z00hi4rBF1h5tE0yeTMBVvB4eB6lSFQBYBJ9gS0OrCw3ibgBiN5cXw";
+    var ur2="AKfycbxgoMJG_7w2prxxcsunJmr0eC3FwaY836OFJiUlU9U12br37Ovk3KmpWPzCPZSK7TLZ7g";
     var urbit= ur1+ur2+"/exec";
        var url = urbit + "?callback=fitbitfound&preId=" + bitid + "&preK=" + bitpass +  "&action=genbit";
        var request = jQuery.ajax({
