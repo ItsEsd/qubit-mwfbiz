@@ -178,8 +178,8 @@ gtag('config', 'G-NN8JWJQCQN');
 <div align="center" id="p1" style="display:none;width:100%;max-width:600px;margin-top:10px;padding:10px;"> <br>
 
 <form id="postTODT" target="hidden_iframe">
-<div id="postT"> <input type="text" class="form-control" name="imiCreator" id="creatorN" placeholder="Name" required /> <span id="passstrength" style="float:right;display:none;"></span> <input type="password" class="form-control" id="genK" placeholder="Generate Key" required /><span id="message" style="float:right;color:#dd1d16;"></span> <input type="password" class="form-control" id="confirmK" placeholder="Confirm Key" required /> </div>
-<div style="display:none;"><input type="text" id="genId" style="display:block;" name="imiId" /> <input type="text" id="inHtml" style="display:block;" name="imiContent" oninput="limitChar()" /></div>
+<div id="postT"> <input type="text" class="form-control" name="QBCreator" id="creatorN" placeholder="Name" required /> <span id="passstrength" style="float:right;display:none;"></span> <input type="password" class="form-control" id="genK" placeholder="Generate Key" required /><span id="message" style="float:right;color:#dd1d16;"></span> <input type="password" class="form-control" id="confirmK" placeholder="Confirm Key" required /> </div>
+<div style="display:none;"><input type="text" id="genId" style="display:block;" name="BitId" /> <input type="text" id="inHtml" style="display:block;" name="QBContent" oninput="limitChar()" /></div>
 <div id="copytoC" style="display:none;"> <input id="copyto" style="display:block;text-align:center;color:#0c29cd;border:none;background-color:#161616;width:100%;" /> <button id="btncopy" type="button" onclick="myFunction()" style="border:none;border-radius:4px;padding:4px 10px;margin-top:4px;"> <span id="copied" style="color:black;">Copy to Clipboard</span> </button>
 <div id="whatsAppShare" style="display:none;margin-top:20px;"></div>
 </div> <div id="loader-qb" class="spinner-border text-warning" style="display: none;margin-top:10px;"></div>
@@ -208,7 +208,7 @@ gtag('config', 'G-NN8JWJQCQN');
 </div>
 <div class="column">
 <div align="center" id="editor">
-<form name="compForm"> <input type="hidden" name="myDoc">
+<form name="compForm">
 <div id="textBox" contenteditable="true" align="left">
 <p onclick=" document.getElementById('textBox').innerHTML='' ;" style="height:200px;">Start here..</p>
 </div>
@@ -330,7 +330,7 @@ gtag('config', 'G-NN8JWJQCQN');
 <div class="modal-content">
 <div class="modal-body">
 <h5>Insert Image</h5><input id="crImage" type="url" style="height:40px; width:60%; outline:none;border:1px solid #dd1d16;border-radius:0px;padding-left:4px;" placeholder="https://" /><button type="button" class="btn btn-dark" id="btnOkImg" data-dismiss="modal" style="border:none;height:38px;width:80px;background-color:black;border-radius:0px;margin-bottom:1px;margin-left:4px;" disabled="disabled">Done</button>
-<div id="radioS" style="padding-top:10px;display:block;"> <input name="size" id="rd1" type="radio"> <span onclick="$('#rd1').click();selectImg();">Small</span> <input id="rd2" name="size" type="radio"><span onclick="$('#rd2').click();selectImg();"> Medium </span><input id="rd3" name="size" type="radio"><span onclick="$('#rd3').click();selectImg();"> Large</span></div>
+<div id="radioS" style="padding-top:10px;display:block;"> <input id="rd1" type="radio"> <span onclick="$('#rd1').click();selectImg();">Small</span> <input id="rd2" name="size" type="radio"><span onclick="$('#rd2').click();selectImg();"> Medium </span><input id="rd3" name="size" type="radio"><span onclick="$('#rd3').click();selectImg();"> Large</span></div>
 <input type='file' accept="image/png, image/gif, image/jpeg" id="upload" style="padding-top:10px;display:block;" onclick="document.getElementById('previewImg').style.display='none';"/>
 <div id="previewImg" style="padding-top:10px;display:none;">
 </div>
@@ -447,9 +447,9 @@ gtag('config', 'G-NN8JWJQCQN');
 <form id="stqubitfrm" target="hidden_iframe">
 <div  style="text-align: left; padding:10px;" align="center">
 <label style="color:black;">QuBit ID:</label>
-<input type="text" class="form-control" id="bitid" name="BitID" required/>
+<input type="text" class="form-control" id="bitid" required/>
 <label style="color:black;">Key:</label>
-<input type="password" class="form-control" id="bitpass" name="BitCode" required/>
+<input type="password" class="form-control" id="bitpass" required/>
 <input type="submit" style="margin-top:10px;" id="stbitup" value="Add">
 <input type="button" style="margin-top:10px;" onclick="$('#addbit').hide('fast');$('#bitlogin').show('fast');stqubitfrm.reset();$('#storedbitspre').show();$('#storedbits').empty();"  value="Close">
 <p id="check"></p> 
