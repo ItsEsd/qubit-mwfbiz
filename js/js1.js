@@ -82,15 +82,33 @@ function printDoc() {
   oPrntWin.document.open();
   oPrntWin.document.write("<!doctype html><html><head><title>Mind Without Fear | M W F<\/title><\/head><body onload=\"print();\">" + oDoc.innerHTML + "<\/body><\/html>");
   oPrntWin.document.close();}
-document.getElementById("crImage").addEventListener("input", selectImg);
-document.getElementById("rd1").addEventListener("click", selectImg);
-document.getElementById("rd2").addEventListener("click", selectImg);
-document.getElementById("rd3").addEventListener("click", selectImg);
-function selectImg() {
+document.getElementById("crImage").addEventListener("input", prvwimg);
+
+function prvwimg(){
   var imgS = document.getElementById("crImage").value;
   document.getElementById("previewImg").style.display = "block";
   document.getElementById("radioS").style.display = "block";
   document.getElementById("previewImg").innerHTML = '<img src="' + imgS + '" width="100%" height="240px">';
+  
+}
+
+function toggleRadio(radioId) {
+  console.log(radioId);
+  var rdnum = radioId.split('rd');console.log(rdnum);
+  for(var k=1;k<=3;k++){
+    var rdnm = 'rd'+k;
+if(k==rdnum[1]){
+  document.getElementById(rdnm).checked =true; selectImg();
+}
+else{
+  document.getElementById(rdnm).checked=false;
+}
+  }
+}
+
+function selectImg() {
+  var imgS = document.getElementById("crImage").value;
+  document.getElementById("radioS").style.display = "block";
   if (imgS != '' && imgS != 'http://') {
     if (document.getElementById('rd1').checked) {
       document.getElementById("btnOkImg").disabled = false;
