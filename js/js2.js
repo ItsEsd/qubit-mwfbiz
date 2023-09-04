@@ -1,3 +1,4 @@
+'use strict';
 $('#backEditor').click(function(){
    $('#qbitbody').fadeIn('slow');
     $('#preview').hide();
@@ -154,61 +155,24 @@ var fullscreenElement = document.body;
     }
   }
 
-// /////////GET SET CARET ////////// FOR TEXTAREA ////
-
-// var ctrl = document.getElementById("textarea"); 
-// function getCaretPosition(ctrl) {
-//   if (document.selection) {
-//     ctrl.focus();
-//     var range = document.selection.createRange();
-//     var rangelen = range.text.length;
-//     console.log(rangelen);
-//     range.moveStart('character', -ctrl.value.length);
-//     var start = range.text.length - rangelen;
-//     return {
-//       'start': start,
-//       'end': start + rangelen
-//     };
-//   } else if (ctrl.selectionStart || ctrl.selectionStart == '0') {
-//     return {
-//       'start': ctrl.selectionStart,
-//       'end': ctrl.selectionEnd
-//     };
-//   } else {
-//     return {
-//       'start': 0,
-//       'end': 0
-//     };
-//   }
-// }
-
-// function setCaretPosition(ctrl, start, end) {
-//   if (ctrl.setSelectionRange) {
-//     ctrl.focus();
-//     ctrl.setSelectionRange(start, end);
-//   } else if (ctrl.createTextRange) {
-//     var range = ctrl.createTextRange();
-//     range.collapse(true);
-//     range.moveEnd('character', end);
-//     range.moveStart('character', start);
-//     range.select();
-//   }
-// }
-
-// jQuery(document).ready(function() {
-//     jQuery("#textBox").click(function() {
-//       setCaretPosition(jQuery("#textBox")[0], jQuery("#5eeb136").val(), jQuery("#5eeb136").val());
-//     });
-//     jQuery("#setselection").click(function() {
-//       setCaretPosition(jQuery("#textBox")[0], jQuery("#5eeb137").val(), jQuery("#5eeb138").val());
-//     });
-//     jQuery("#textBox").on('click',function() {
-//       var pos = getCaretPosition(jQuery("#textBox")[0]);
-//       console.log(pos.start);
-//       if (pos.start == pos.end) {
-//         console.log("Current caret position: " + pos.start);
-//       } else {
-//         console.log("Selection starts at " + pos.start + " and ends at " + pos.end);
-//       }
-//     });
-// });
+  formwall.addEventListener('submit', (event) => {
+    var sendur = "https://script.google.com/macros/s/AKfycby4DqWAvEb7MqrTf1NW_PyUKgFBcxjmObqgHQ7kPStijyay_TxHJFveyAKd_QXthY8J/exec";
+    var qury = escape($('#dimprv').val());
+    var name = $('#dname').val();
+    var emid = $('#dmail').val();
+    var url = sendur + "?callback=ctrlq&dmail=" + emid + "&dname=" + name + "&dimprv=" + qury + "&action=inexp";
+    var request = jQuery.ajax({
+    crossDomain: true,
+    url: url,
+    method: "GET",
+    dataType: "jsonp"
+    });
+    $('#notif,#falqbody').show();$('.imgcon').hide();
+    document.getElementById('improfrm').style.display = "none";
+    Reset();
+    });
+  
+    function Reset() {
+    document.getElementById("formwall").reset();
+    }
+  
