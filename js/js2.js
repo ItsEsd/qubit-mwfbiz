@@ -30,36 +30,39 @@ $('#backEditor').click(function(){
   var user = getCookie("_ybizc0");
   var usergu = getCookie("_ybizv0");
   var userel = getCookie("_ybize0");
+  var userm = getCookie("_ybizm0");
 function checkqbflag(flag){
-  var userqb = getqbCookie("_ybizqb");
-  var userqxt = getqbCookie("_ybizqe");
-  if(userqb == undefined){
-setqbcookie(flag);
+var userqb = getqbCookie("_ybizqb");
+var userqxt = getqbCookie("_ybizqe");
+if(user !=="" || userm !==""){
+setqbcookie(1);
+}
+else if(userqb == undefined){
+  setqbcookie(flag);
 // ????? condition for First Visit..
-  }
-  else if (userqb > 3 && userqxt==undefined){
+}
+else if (userqb > 3 && userqxt==undefined){
 $('#loader_e').hide();
 $('#vtfdback').slideDown('slow');
 document.getElementById('preview').style.filter='blur(12px)';
 document.getElementById('preview').innerHTML = "";
 document.getElementById('preview').style.padding="0px";
 document.body.style.pointerEvents ="auto";
-  }
-  else if(userqb < userqxt){
-    setqbcookie(userqb);
-  }
-  else if (userqb > userqxt){
-    $('#loader_e').hide();
-    $('#vtfdback').slideDown('slow');
-    document.getElementById('preview').style.filter='blur(12px)';
-    document.getElementById('preview').innerHTML = "";
-    document.getElementById('preview').style.padding="0px";
-    document.body.style.pointerEvents ="auto";
-  }
-  else{
-    setqbcookie(userqb);
-  }
-
+}
+else if(userqb < userqxt){
+  setqbcookie(userqb);
+}
+else if (userqb > userqxt){
+  $('#loader_e').hide();
+  $('#vtfdback').slideDown('slow');
+  document.getElementById('preview').style.filter='blur(12px)';
+  document.getElementById('preview').innerHTML = "";
+  document.getElementById('preview').style.padding="0px";
+  document.body.style.pointerEvents ="auto";
+}
+else{
+  setqbcookie(userqb);
+}
 }
 
 function setqbcookie(flagval){
