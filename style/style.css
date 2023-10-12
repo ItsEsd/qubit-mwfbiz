@@ -1001,3 +1001,38 @@ blockquote{
 #fullscreen-button:hover{
   opacity:0.8;
 }
+
+.prsdmtdt{
+  width:100%;
+  max-width:100%;
+  height:100%;
+  background-color: #ffc3c1;
+  word-wrap: break-word;
+  font-family:Arial, Helvetica, sans-serif;
+  border-radius: 10px;
+  padding:10px;
+  display: block;
+  }
+  .prsdmtdt:hover{
+    opacity:0.8;
+  }
+  .prsdimg{
+  width:100%;
+  border-radius: 10px;
+  }
+  .prsdtitl{
+      margin:0px;
+      margin-top:10px;
+      font-size: 1.15rem;
+      font-weight: 600;
+  }
+  .prsddescp{
+      margin:0px;
+      font-size: 0.85rem;
+      font-weight: 400;
+  }
+
+  .prsdmtdt a{
+    text-decoration: none;
+    color:black;
+  }

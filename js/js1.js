@@ -204,7 +204,32 @@ function limitChar() {
     document.getElementById("CharExcd").style.display = "none";
     document.getElementById("poTOD").disabled = false;
     document.getElementById("confirmK").disabled = false;
-  }}
+  }
+}
+
+function parseURL(url) {
+    fetch(url)
+        .then(response => response.text())
+        .then(html => {
+            const parser = new DOMParser();
+            const doc = parser.parseFromString(html, 'text/html');
+            const title = doc.querySelector('title').textContent;
+            const metaDescription = doc.querySelector('meta[name="description"]') || doc.querySelector('meta[property="og:description"]');
+            const description = metaDescription ? metaDescription.getAttribute('content') : 'Not found';
+            const metaImage = doc.querySelector('meta[name="image"]') || doc.querySelector('meta[property="og:image"]');
+            const image = metaImage ? metaImage.getAttribute('content') : 'Not found';
+            const prsdhtml = `<div class="prsdmtdt" contenteditable="false"><a href=`+url+`>
+            <img class="prsdimg" src="`+image+`" onerror="this.style.display='none'">
+            <p class="prsdtitl">`+title+`</p>
+            <p class="prsddescp">`+description+`</p></a></div>`;
+            formatDoc('insertHTML', "<br><div class='embdcon'>"+prsdhtml+"</div><br>");
+        })
+        .catch(error => {
+          const prsdhtml = `<div class="prsdmtdt" contenteditable="false"><a href=`+url+`>
+            <center>ERROR</center></a></div>`;
+            formatDoc('insertHTML', "<br><div class='embdcon'>"+prsdhtml+"</div><br>");
+        });
+}
 jQuery('#confirmK').on('keyup', function() {
   var valuee = jQuery('#inHtml').val();
   var str = String(valuee);
