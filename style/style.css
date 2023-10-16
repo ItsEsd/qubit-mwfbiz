@@ -121,14 +121,14 @@
 
     #toolBar2 button{
       border: 0px;
-      width:30px;
-      height:30px;
+      width:26px;
+      height:27px;
       background-color:#c8c8c8 ;
       margin:2px;
       padding:1px;
     }
 #toolBar2 i{
-  font-size:15px;
+  font-size:14px;
 }
     #toolBar1 select {
       font-size: 10px;
