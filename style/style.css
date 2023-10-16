@@ -119,10 +119,16 @@
       cursor: pointer;
     }
 
-    img.intLink {
-      border: 0;
+    #toolBar2 button{
+      border: 0px;
+      width:30px;
+      height:30px;
+      background-color:#c8c8c8 ;
+      margin:2px;
     }
-
+#toolBar2 i{
+  font-size:15px;
+}
     #toolBar1 select {
       font-size: 10px;
     }

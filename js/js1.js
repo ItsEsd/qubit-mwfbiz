@@ -81,7 +81,7 @@ function printDoc() {
     return;}
   var oPrntWin = window.open("", "_blank", "width=450,height=470,left=400,top=100,menubar=yes,toolbar=no,location=no,scrollbars=yes");
   oPrntWin.document.open();
-  oPrntWin.document.write("<!doctype html><html><head><title>Mind Without Fear | M W F<\/title><\/head><body onload=\"print();\">" + oDoc.innerHTML + "<\/body><\/html>");
+  oPrntWin.document.write("<!doctype html><html><head><title>Mind Without Fear | M W F<\/title><link rel=\"stylesheet\' href=\"/style/style.css\"><\/head><body onload=\"print();\" style=\"background:#161616;\"><center><div style=\"width:100%;max-width:600px;text-align:left;background:#363636;color:#ffd703;word-wrap:break-word\">" + oDoc.innerHTML + "<\/center><\/body><\/html>");
   oPrntWin.document.close();}
 document.getElementById("crImage").addEventListener("input", prvwimg);
 
