@@ -639,7 +639,6 @@ function closequbitdash() {
   function fal(){
     return false;}
 
-document.getElementById('ldamntl').src="http://admin.mwfbiz.com/toolkit/index.html?_source=other"
 const openModalButtontk = document.getElementById("opntlkt");
 const modaltk = document.getElementById("admntlkt");
 
