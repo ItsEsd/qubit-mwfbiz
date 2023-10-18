@@ -255,10 +255,10 @@ function dateUp() {
   var urbit_ = ur1+ur2+"/exec";
     document.getElementById("poTOD").disabled = true;
   document.getElementById("loader-qb").style.display = "block";
-  var creator = escape(JSON.stringify(jQuery("#creatorN").val()));
-  var food = escape(JSON.stringify(jQuery("#genK").val()));
-  var itemno = escape(JSON.stringify(jQuery("#genId").val()));
-  var recip = escape(JSON.stringify(jQuery("#basehtm").val()));
+  var creator = encodeURIComponent(JSON.stringify(jQuery("#creatorN").val()));
+  var food = encodeURIComponent(JSON.stringify(jQuery("#genK").val()));
+  var itemno = encodeURIComponent(JSON.stringify(jQuery("#genId").val()));
+  var recip = encodeURIComponent(JSON.stringify(jQuery("#basehtm").val()));
   var splitString =splitStringByLength(recip,4500);
   var clln = splitString.length;   var urlmd = [];var urmi;
   var currentTime = jQuery("#dateQ").val();
@@ -324,7 +324,7 @@ function ctrlqinst(e) {
       makeAjaxRequest(arrystng,nxtcl)
     }
     else if(nxtcl=flln){
-        var creator = escape(JSON.stringify(jQuery("#creatorN").val()));
+        var creator = encodeURIComponent(JSON.stringify(jQuery("#creatorN").val()));
         var food1 = jQuery("#genK").val();
         var itemno1 = jQuery("#genId").val();
         document.getElementById("preId").value=itemno1;
@@ -333,8 +333,8 @@ function ctrlqinst(e) {
         document.getElementById("whatsAppShare").style.display = "block";
         document.getElementById("copytoC").style.display = "block";
         document.getElementById("msg").innerHTML = "QuBit Stored.";
-        var itemno1 = escape(JSON.stringify(jQuery("#genId").val()));
-        var food1 = escape(JSON.stringify(jQuery("#genK").val()));
+        var itemno1 = encodeURIComponent(JSON.stringify(jQuery("#genId").val()));
+        var food1 = encodeURIComponent(JSON.stringify(jQuery("#genK").val()));
         var item = JSON.stringify(jQuery("#genId").val());
         var foodF = JSON.stringify(jQuery("#genK").val());
         document.getElementById("whatsAppShare").innerHTML = "<a title='Share On WhatsApp' class='ApShare' style='font-size:14px; text-decoration:none;color:#008000;background:#e6e6e6;padding:4px 10px;border-radius:4px;' type='button' target='_blank' href='https://wa.me/?text=" + creator + " has created a QuBit. Create your QuBit and share at https://qubit.mwfbiz.com. Shared QuBit ID : " + itemno1 + " Key: " + food1 + " N.B: Use at your own risk.' data-action='share/whatsapp/share'><i class='fa fa-whatsapp' style='font-size:28px;color:green;'></i></a><a title='Send SMS' class='ApShare' style='font-size:14px;margin-top:10px; text-decoration:none;color:#0c29cd;background:#e6e6e6;padding:4px 10px;border-radius:4px;' target='_parent' type='button' href='sms:?body=" + creator + " has created a QuBit. Create your QuBit and share at https://qubit.mwfbiz.com. Shared QuBit ID : " + itemno1 + " Key: " + food1 + " N.B: Use at your own risk.'><i class='fa fa-comments-o' style='font-size:28px;color:#0c29cd;'></i></a><a title='Send Mail' class='ApShare' style='font-size:14px;margin-top:10px; margin-left:6px;text-decoration:none;color:#0c29cd;background:#e6e6e6;padding:4px 10px;border-radius:4px;' target='_parent' type='button' href='mailto:?body=" + creator + " has created a QuBit. Create your QuBit and share at https://qubit.mwfbiz.com. Shared QuBit ID : " + itemno1 + " Key: " + food1 + " N.B: Use at your own risk.'><i class='fa fa-envelope' style='font-size:28px;color:#cc6600;'></i></a>";
@@ -355,8 +355,8 @@ function readgenTOD() {
   jQuery("#preview").hide();
   var itemnoT = jQuery("#preId").val();
   var foodF = jQuery("#preK").val();
-  var itemno = escape(JSON.stringify(jQuery("#preId").val()));
-  var food = escape(JSON.stringify(jQuery("#preK").val()));
+  var itemno = encodeURIComponent(JSON.stringify(jQuery("#preId").val()));
+  var food = encodeURIComponent(JSON.stringify(jQuery("#preK").val()));
   if (itemnoT != "" && foodF != "") {
     document.getElementById("loader_e").style.display = "block";
     document.getElementById('notfound').style.display = "none";
@@ -511,7 +511,7 @@ if(getCookie("_ybize0") !=""){
   }, 1000);});
 stqubitfrm.addEventListener('submit', (event) => {
   var bitid = JSON.stringify(jQuery("#bitid").val());
-  var bitpass = escape(JSON.stringify(jQuery("#bitpass").val()));
+  var bitpass = encodeURIComponent(JSON.stringify(jQuery("#bitpass").val()));
   if (bitid != 0 && bitpass != 0) {
     document.getElementById("loader_e").style.display = "block";
     var ur1="https://script.google.com/macros/s/";
@@ -555,8 +555,8 @@ function userfound(e){
   if(res != "ID not found!"){
   var mailcheckQ = escape(jQuery("#mailcheck").val());
   var passcheckQ = escape(jQuery("#passcheck").val());
-  var bitidD =  escape(JSON.stringify(jQuery("#bitid").val()));
-  var bitpassD =  escape(JSON.stringify(jQuery("#bitpass").val()));
+  var bitidD =  encodeURIComponent(JSON.stringify(jQuery("#bitid").val()));
+  var bitpassD =  encodeURIComponent(JSON.stringify(jQuery("#bitpass").val()));
     var urlbit1 = "https://script.google.com/macros/s/";
     var urlbit2 ="AKfycbxp5KXDO0gtJOG_QoiKhYo63kzs2FUItXTgP8TUWEFr0IQKHiVyi5qSlPM4Ngv-LEvC";
     var urlbit = urlbit1+urlbit2+"/exec" + "?callback=ctrlqbitstr&passcheck=" + passcheckQ +  "&mailcheck=" + mailcheckQ +"&bitid=" + bitidD + "&bitpass=" + bitpassD +"&action=sttd";
