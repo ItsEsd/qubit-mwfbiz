@@ -41,7 +41,7 @@ function getCookie(cname) {
        if(r =="yes"){
          document.getElementById('preId').value= q;
          document.getElementById('preK').value= k;
-         $('#backEditor,#qbitbody').hide();
+         $('#backEditor,#qbitbody').empty();
          $('#falqbody').show();
          $(document).bind("contextmenu",function(e){
            return false;
@@ -54,9 +54,33 @@ function getCookie(cname) {
     } 
    }
         } 
-      else  if (userel != "" ) { 
+        else if(userm !="" ){
+          $('#falqbody').hide();$('#qubitst').empty();
+          document.getElementById("imgcon").style.pointerEvents = "none";
+          document.getElementById('dosrmbt').style.margin='0px';
+       var url_string = window.location.href;
+       var url = new URL(url_string);
+       var q = window.atob(url.searchParams.get("qbid"));
+       var k = window.atob(url.searchParams.get("bizk"));
+       var r = url.searchParams.get("no");
+       if(r =="yes"){
+         document.getElementById('preId').value= q;
+         document.getElementById('preK').value= k;
+         $('#backEditor,#qbitbody').hide();
+         $('#falqbody').show();
+         $(document).bind("contextmenu",function(e){
+           return false;
+             });
+         readgenTOD();
+       }
+       else{
+         $('#qbitbody').show();
+       }
+        }
+      else  if (userel != "") { 
         document.getElementById("imgcon").style.pointerEvents = "none";
         $('#qubitst,#backEditor,#editor').empty();$('#showandpost').show();
+        document.getElementById('dosrmbt').style.margin='0px';
           var lem = document.createElement('div');
           lem.id="frelt";
           lem.innerHTML= "<iframe src='https://imi.mwfbiz.com/'></ifarme>"
@@ -71,7 +95,7 @@ function getCookie(cname) {
             document.body.style.pointerEvents = "none";
             document.getElementById('preId').value= q;
             document.getElementById('preK').value= k;
-            $('#backEditor,#qbitbody').hide();
+            $('#backEditor,#qbitbody').empty();
             $('#falqbody').show();
             readgenTOD();
           }
@@ -82,10 +106,10 @@ function getCookie(cname) {
             return false;
               });
         } 
-        else if(usergu != "" || userm !="" ){
+        else if(usergu != ""){
           document.getElementById("imgcon").style.pointerEvents = "none";
           document.getElementById('qbitbody').style.display = "none";
-          $('#qubitst').hide();
+          $('#qubitst').empty();
           var url_string = window.location.href;
           var url = new URL(url_string);
           var q = window.atob(url.searchParams.get("qbid"));
@@ -95,7 +119,7 @@ function getCookie(cname) {
             document.body.style.pointerEvents = "none";
             document.getElementById('preId').value= q;
             document.getElementById('preK').value= k;
-            $('#backEditor,#qbitbody').hide();
+            $('#backEditor,#qbitbody').empty();
             $('#falqbody').show();
             readgenTOD();
           }
