@@ -41,7 +41,7 @@ function getCookie(cname) {
        if(r =="yes"){
          document.getElementById('preId').value= q;
          document.getElementById('preK').value= k;
-         $('#backEditor,#qbitbody').empty();
+         $('#backEditor,#qbitbody').hide();
          $('#falqbody').show();
          $(document).bind("contextmenu",function(e){
            return false;
@@ -79,7 +79,7 @@ function getCookie(cname) {
         }
       else  if (userel != "") { 
         document.getElementById("imgcon").style.pointerEvents = "none";
-        $('#qubitst,#backEditor,#editor').empty();$('#showandpost').show();
+        $('#qubitst,#backEditor,#editor').hide();$('#showandpost').show();
         document.getElementById('dosrmbt').style.margin='0px';
           var lem = document.createElement('div');
           lem.id="frelt";
@@ -95,7 +95,7 @@ function getCookie(cname) {
             document.body.style.pointerEvents = "none";
             document.getElementById('preId').value= q;
             document.getElementById('preK').value= k;
-            $('#backEditor,#qbitbody').empty();
+            $('#backEditor,#qbitbody').hide();
             $('#falqbody').show();
             readgenTOD();
           }
@@ -119,7 +119,7 @@ function getCookie(cname) {
             document.body.style.pointerEvents = "none";
             document.getElementById('preId').value= q;
             document.getElementById('preK').value= k;
-            $('#backEditor,#qbitbody').empty();
+            $('#backEditor,#qbitbody').hide();
             $('#falqbody').show();
             readgenTOD();
           }
