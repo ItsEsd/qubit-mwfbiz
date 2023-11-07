@@ -155,8 +155,8 @@ function embed_vid() {
   var link = document.getElementById("crVideo").value;
   var myId = getId(link);
   if (link != '' && link != 'http://') {
-    document.getElementById("previewvid").innerHTML = '<div class="youvidF embed-responsive"><iframe src="' + myId + '" frameborder="0" allowfullscreen></iframe></div>';
-    formatDoc('insertHTML', '<br><div class="youvidF embed-responsive"><iframe src="' + myId + '" frameborder="0" allowfullscreen></iframe></div><br>');
+    document.getElementById("previewvid").innerHTML = '<div class="emresp"><iframe src="' + myId + '" frameborder="0" allowfullscreen></iframe></div>';
+    formatDoc('insertHTML', '<br><div class="emresp"><iframe src="' + myId + '" frameborder="0" allowfullscreen></iframe></div><br>');
   } else {
     return false;}}
 document.getElementById("crEmbed").addEventListener("input", embed_cod);
