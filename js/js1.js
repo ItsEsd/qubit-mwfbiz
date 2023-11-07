@@ -134,20 +134,29 @@ function CreateLink() {
   } else {
     return false}}
 function getId(url) {
-  var regExp = /^.*(youtu.be\/|v\/|u\/\w\/|embed\/|watch\?v=|\&v=)([^#\&\?]*).*/;
-  var match = url.match(regExp);
-  if (match && match[2].length == 11) {
-    return match[2];
-  } else {
-    return 'error';}}
+  var regExpYT = /^.*(youtu.be\/|v\/|u\/\w\/|embed\/|watch\?v=|\&v=)([^#\&\?]*).*/;
+  var regExpVM = /^.*(vimeo.com\/)([^#\&\?]*).*/;
+  var matchYT = url.match(regExpYT);
+  var matchVM = url.match(regExpVM);
+
+  if (matchYT && matchYT[2].length == 11) {
+    return "https://www.youtube.com/embed/"+matchYT[2];
+  } 
+  
+  else if(matchVM){
+    return "https://player.vimeo.com/video/"+matchVM[2];
+  }
+  else {
+    return 'error';
+  }}
 document.getElementById("crVideo").addEventListener("input", embed_vid);
 function embed_vid() {
   document.getElementById("previewvid").style.display = "block";
   var link = document.getElementById("crVideo").value;
   var myId = getId(link);
   if (link != '' && link != 'http://') {
-    document.getElementById("previewvid").innerHTML = '<iframe class="youvidF" src="//www.youtube.com/embed/' + myId + '" frameborder="0" allowfullscreen></iframe>';
-    formatDoc('insertHTML', '<iframe class="youvidF" src="//www.youtube.com/embed/' + myId + '" frameborder="0" allowfullscreen></iframe>');
+    document.getElementById("previewvid").innerHTML = '<div class="youvidF embed-responsive"><iframe src="' + myId + '" frameborder="0" allowfullscreen></iframe></div>';
+    formatDoc('insertHTML', '<br><div class="youvidF embed-responsive"><iframe src="' + myId + '" frameborder="0" allowfullscreen></iframe></div><br>');
   } else {
     return false;}}
 document.getElementById("crEmbed").addEventListener("input", embed_cod);
@@ -447,14 +456,7 @@ $(document).bind("contextmenu",function(e){
     $('#btnsubmit,.form-control,textarea').attr('disabled','true');
     $('#adsescook').slideUp();
 }
-function getId(url) {
-  var regExp = /^.*(youtu.be\/|v\/|u\/\w\/|embed\/|watch\?v=|\&v=)([^#\&\?]*).*/;
-  var match = url.match(regExp);
-  if (match && match[2].length == 11) {
-    return match[2];
-  } else {
-    return 'error';
-  }}
+
 var mybutton = document.getElementById("preTOD");
 function topFunction() {
   document.body.scrollTop = 0;
