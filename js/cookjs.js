@@ -201,7 +201,7 @@ function emdbqbt(label){
   var y = document.getElementsByClassName('keyidst');
        var qbid = window.btoa(JSON.parse(x[posofinput].value));
        var kqid = window.btoa(JSON.parse(y[posofinput].value));
-  var crlnk = "https://qubit.mwfbiz.com?qbid="+qbid+"&bizk="+kqid+"&no=yes";
+  var crlnk = "https://qubit.mwfbiz.com?qbid="+qbid+"&no=yes"+"&bizk="+kqid;
   var newlk ='<iframe src="'+crlnk+'" style="width:100%;max-width:600px;height:500px;border:0px;"></iframe>';
   var str= "<div>Code Copied!</div>"
   copybitlink(newlk,str);
@@ -215,7 +215,7 @@ function opnqbntb(label){
   var y = document.getElementsByClassName('keyidst');
        var qbid = window.btoa(JSON.parse(x[posofinput].value));
        var kqid = window.btoa(JSON.parse(y[posofinput].value));
-  var newlk = "https://qubit.mwfbiz.com?qbid="+qbid+"&bizk="+kqid+"&no=yes";
+  var newlk = "https://qubit.mwfbiz.com?qbid="+qbid+"&no=yes"+"&bizk="+kqid;
   window.open(newlk, "_blank");
 }
 function crcpbitlink(label){
@@ -226,7 +226,7 @@ function crcpbitlink(label){
   var y = document.getElementsByClassName('keyidst');
        var qbid = window.btoa(JSON.parse(x[posofinput].value));
        var kqid = window.btoa(JSON.parse(y[posofinput].value));
-  var newlk = "https://qubit.mwfbiz.com?qbid="+qbid+"&bizk="+kqid+"&no=yes";
+  var newlk = "https://qubit.mwfbiz.com?qbid="+qbid+"&no=yes"+"&bizk="+kqid;
 var str= "<div>Link Copied!</div>"
   copybitlink(newlk,str);}
 function copybitlink(newlk,str){
