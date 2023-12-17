@@ -628,7 +628,7 @@ function opnmnualqbt(label){
   var y = document.getElementsByClassName('keyidst');
        var qbid = window.btoa(JSON.parse(x[posofinput].value));
        var kqid = window.btoa(JSON.parse(y[posofinput].value));
-  var newlk = "https://qubit.mwfbiz.com?qbid="+qbid+"&bizk="+kqid+"&no=yes";
+  var newlk = "https://qubit.mwfbiz.com?qbid="+qbid+"&no=yes"+"&bizk="+kqid;
   window.open(newlk, "_blank");
        }
 function showqubitdash() {
