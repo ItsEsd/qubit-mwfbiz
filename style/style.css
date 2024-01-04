@@ -8,7 +8,6 @@ body {
   background: #161616;
   color: #ffd703;
   overscroll-behavior-x: none;
-  font-family: sans-serif;
 }
 
 #lds-spinner {
