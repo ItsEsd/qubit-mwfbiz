@@ -1,3 +1,5 @@
+// Mind Without Fear - MWF
+// ///////////////////// ©️ mwfbiz.COM
 "use strict";
 $("#backEditor").click(function () {
   $("#qbitbody").fadeIn("slow");

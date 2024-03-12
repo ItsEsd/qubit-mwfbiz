@@ -1,3 +1,5 @@
+// Mind Without Fear - MWF
+// ///////////////////// ©️ mwfbiz.COM
 "use strict";
 function getCookie(cname) {
   var name = cname + "=";
