@@ -118,7 +118,7 @@ function enterFullscreen() {
     fullscreenElement
       .requestFullscreen()
       .then(function () {
-        hideFooter();
+        showFooter();
       })
       .catch(function (error) {
         window.open(window.location.href, "_blank");
@@ -128,7 +128,7 @@ function enterFullscreen() {
     fullscreenElement
       .mozRequestFullScreen()
       .then(function () {
-        hideFooter();
+        showFooter();
       })
       .catch(function (error) {
         window.open(window.location.href, "_blank");
@@ -138,7 +138,7 @@ function enterFullscreen() {
     fullscreenElement
       .webkitRequestFullscreen()
       .then(function () {
-        hideFooter();
+        showFooter();
       })
       .catch(function (error) {
         window.open(window.location.href, "_blank");
@@ -148,7 +148,7 @@ function enterFullscreen() {
     fullscreenElement
       .msRequestFullscreen()
       .then(function () {
-        hideFooter();
+        showFooter();
       })
       .catch(function (error) {
         window.open(window.location.href, "_blank");
@@ -156,12 +156,23 @@ function enterFullscreen() {
   }
 }
 
-function hideFooter() {
+function showFrameFooter() {
   var footrspns = document.getElementById("footrspns");
+  footrspns.innerHTML =
+    '<div class="ifrmd"><span><a target="_blank" href="https://mwfbiz.com/privacy-policy/">Privacy Policy</a> | <a target="_blank" href="https://mwfbiz.com/terms-of-use/">Terms of Use</a> | <svg xmlns="http://www.w3.org/2000/svg" id="fullscreen-button" style="cursor:pointer;" onclick="toggleFullscreen(this);" fill="currentColor" class="bi bi-window-fullscreen" viewBox="0 0 16 16"><path d="M3 3.5a.5.5 0 1 1-1 0 .5.5 0 0 1 1 0Zm1.5 0a.5.5 0 1 1-1 0 .5.5 0 0 1 1 0Zm1 .5a.5.5 0 1 0 0-1 .5.5 0 0 0 0 1Z"/><path d="M.5 1a.5.5 0 0 0-.5.5v13a.5.5 0 0 0 .5.5h15a.5.5 0 0 0 .5-.5v-13a.5.5 0 0 0-.5-.5H.5ZM1 5V2h14v3H1Zm0 1h14v8H1V6Z"/></svg></span>© <a target="_blank" href="https://mwfbiz.com/">mwfbiz.COM</div>';
   if (footrspns) {
-    footrspns.style.display = "none";
+    footrspns.style.display = "block";
   }
 }
+function showFooter() {
+  var footrspns = document.getElementById("footrspns");
+  footrspns.innerHTML =
+    '<div align="center" style="padding-bottom:10px;padding-top:6px;"><a target="_blank" href="https://www.mwfbiz.com/"><img src="../image/mwfLogo.gif" frameBorder="0" id="titleImg" style="pointer-events: none;float:center;background:transparent;" alt="mwfbiz.COM"></a></div>';
+  if (footrspns) {
+    footrspns.style.display = "block";
+  }
+}
+
 function exitFullscreen() {
   if (document.exitFullscreen) {
     document.exitFullscreen();
@@ -175,12 +186,15 @@ function exitFullscreen() {
     // IE/Edge
     document.msExitFullscreen();
   }
-  $("#footrspns").css("display", "block");
 }
 document.addEventListener("fullscreenchange", handleFullscreenChange);
 function handleFullscreenChange() {
   if (!document.fullscreenElement) {
-    $("#footrspns").css("display", "block");
+    if (window.location !== window.parent.location) {
+      showFrameFooter();
+    } else {
+      showFooter();
+    }
   }
 }
 
